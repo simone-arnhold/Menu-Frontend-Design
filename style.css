@@ -61,7 +61,7 @@ a {
 
 .navbar-logo img {
   flex: 0;
-  max-width: 100px;
+  max-width: 120px;
 }
 
 .nav-categorie-btn,
@@ -226,7 +226,7 @@ nav#nav-categorie a.close-menu {
 }
 
 .contenitore-main {
-  max-width: 780px;
+  /* max-width: 1080px; */
   position: relative;
   margin: 0 auto;
   background-color: #fff;
@@ -243,7 +243,7 @@ nav#nav-categorie a.close-menu {
   border-bottom: 3px solid var(--lightgrey);
 }
 .nav-sottocategorie .contenitore-sottocategorie {
-  padding-left: 5px;
+  padding-left: 35px;
   padding-right: 5px;
 }
 
@@ -334,8 +334,12 @@ nav#nav-categorie a.close-menu {
   opacity: 1;
 }
 .contenitore-piatti {
-  /* display: flex; */
+  display: flex;
   padding: 35px;
+}
+
+.sottocategoria-pannello {
+  width: 100%;
 }
 
 .riga {
@@ -352,7 +356,11 @@ nav#nav-categorie a.close-menu {
   display: block;
 }
 .piatto .contenitore-immagine img {
-  width: 100%;
+  max-width: 300px;
+  max-height: 200px;
+  /* width: 100%; */
+  object-fit: cover;
+  object-position: center;
 }
 .piatto h2.break {
   font-size: 1rem;
@@ -390,7 +398,7 @@ nav#nav-categorie a.close-menu {
   display: inline;
   position: absolute;
   /* top: 2px; */
-  right: 15px;
+  right: 0px;
 }
 
 .allergeni-info a {
@@ -407,9 +415,7 @@ nav#nav-categorie a.close-menu {
 }
 .contenitore-immagine {
   position: relative;
-  width: 100%;
   padding-bottom: calc(100% / 1.5);
-  float: left;
   height: 0;
 }
 .contenuto-immagine {
@@ -420,6 +426,7 @@ nav#nav-categorie a.close-menu {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  border-radius: 10px;
 }
 
 .piatto .contenitore-testo {
@@ -438,22 +445,16 @@ nav#nav-categorie a.close-menu {
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 100%;
+  width: 500px;
+  max-width: 80%;
+  margin: 1.75rem auto;
   pointer-events: auto;
   background-color: transparent;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0.3rem;
   outline: 0;
-}
-
-.overlay-contenuto {
   background-color: #fff;
-}
-
-.overlay-contenuto {
-  max-width: 500px;
-  margin: 1.75rem auto;
 }
 
 .overlay-header {
@@ -516,13 +517,34 @@ nav#nav-categorie a.close-menu {
   padding: 0rem 1.8rem 1.8rem 1.8rem;
 }
 
-.overlay-body ul {
+/* icone allergeni old, flex */
+/* .overlay-body ul {
   margin: 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  flex-basis: 21%;
+} */
+
+/* icone allergeni */
+.overlay-body ul {
+  display: grid;
+  padding: 16px;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: auto;
+  justify-items: center;
+  align-items: center;
+  align-items: space-evenly;
+}
+
+.overlay-body ul :last-child,
+.overlay-body ul :nth-last-child(2) {
+  justify-self: center;
+  /* width: calc(200px - 20px); */
+  grid-column-start: span 2;
+  /* border: 1px solid red; */
 }
 
 .overlay-body ul li {
@@ -548,3 +570,13 @@ nav#nav-categorie a.close-menu {
 }
 
 /* overlay fine */
+
+/* .piatto {
+  display: none !important;
+} */
+
+@media only screen and (min-width: 780px) {
+  .contenitore-main {
+    max-width: 780px;
+  }
+}
