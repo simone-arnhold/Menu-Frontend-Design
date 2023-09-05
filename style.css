@@ -548,10 +548,8 @@ nav#nav-categorie a.close-menu {
 
 .overlay-body ul :last-child,
 .overlay-body ul :nth-last-child(2) {
-  justify-self: center;
-  /* width: calc(200px - 20px); */
-  grid-column-start: span 2;
-  /* border: 1px solid red; */
+  /* justify-self: center; */
+  /* grid-column-start: span 2; */
 }
 
 .overlay-body ul li {
