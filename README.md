@@ -3,7 +3,8 @@
 Simone Arnhold
 
 > <https://github.com/simone-arnhold/Menu-Frontend-Design>
-> Demo: https://simone-arnhold.github.io/Menu-Frontend-Design/
+> Demo:
+> https://simone-arnhold.github.io/Menu-Frontend-Design/
 
 07\.09\.2023
 
