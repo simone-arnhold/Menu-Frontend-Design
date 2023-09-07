@@ -561,11 +561,11 @@ nav#nav-categorie a.close-menu {
   align-items: space-evenly;
 }
 
-.overlay-body ul :last-child,
+/* .overlay-body ul :last-child,
 .overlay-body ul :nth-last-child(2) {
-  /* justify-self: center; */
-  /* grid-column-start: span 2; */
-}
+  justify-self: center;
+  grid-column-start: span 2;
+} */
 
 .overlay-body ul li {
   filter: opacity(0.3);
