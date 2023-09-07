@@ -76,6 +76,7 @@ a {
   z-index: 1000;
   transition: transform 1s cubic-bezier(0.22, 1, 0.22, 1);
   padding: 10px;
+  cursor: pointer;
 }
 
 .nav-categorie-btn.open {
