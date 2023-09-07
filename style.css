@@ -57,12 +57,14 @@ a {
 .navbar-brand {
   font-size: 1.6rem;
   font-weight: 700;
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
-  max-width: 80%;
+  /* padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem; */
+  /* max-width: 80%; */
   white-space: inherit;
   color: #000;
   visibility: hidden;
+  width: 46px;
+  height: 36px;
 }
 
 .navbar-logo img {
