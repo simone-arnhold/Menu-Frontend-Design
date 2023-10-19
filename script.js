@@ -8,6 +8,16 @@ const overlayContenuto = document.querySelector(".overlay-contenuto")
 const overlayCloseButton = document.querySelector(".overlay-close-btn")
 const allergeniInfoButtons = document.querySelectorAll(".allergeni-info")
 
+// toggle theme
+function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+}
+
+// Detect user's preference for light or dark mode
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.body.classList.add('dark-mode');
+}
+
 
 // navbar
 navCategorieButton.addEventListener("click", () => {
