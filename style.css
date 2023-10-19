@@ -17,6 +17,13 @@
   box-sizing: border-box;
 }
 
+* {
+  /* transition for dark/light theme */
+  transition: color 0.3s ease-in, background-color 0.3s ease-in,
+    border-bottom 0.3s ease-in, scrollbar-color 0.3s ease-in;
+  /* transition: all 0.3s ease-in; */
+}
+
 /* for light theme */
 :root {
   --primary: #fff;
@@ -36,7 +43,7 @@
 /* dark theme inizio */
 body.dark-mode {
   --primary: #2e2e2e;
-  --secondary: #fdfdfd;
+  --secondary: #f7f7f7;
   --tertiary: #cdcdcdb0;
   --quaternary: #fdfdfd;
   --quinary: #cdcdcdb0;
@@ -54,6 +61,7 @@ body.dark-mode {
   /* background-color: var(--primary); */
   /* color: var(--secondary); */
   background-color: var(--secondary);
+  /* transition: background-color 1s ease-in-out; */
   cursor: pointer;
   width: 10px;
   height: 10px;
@@ -260,7 +268,7 @@ nav#nav-categorie a.close-menu {
 }
 
 #nav-categorie .nav-categorie-body ul li a {
-  color: var(--quinary) !important;
+  color: var(--secondary);
 }
 
 #nav-categorie .linguaggi .lang-btn.corrente a {
@@ -555,6 +563,8 @@ nav#nav-categorie a.close-menu {
 
 .overlay-body {
   padding: 0rem 1.8rem 1.8rem 1.8rem;
+  /* ignore light/dark theme */
+  background-color: #f7f7f7;
 }
 
 /* icone allergeni old, flex */
