@@ -50,7 +50,8 @@ a {
   text-decoration: none;
 }
 
-.no-overflow-y {
+.no-overflow {
+  overflow-x: hidden !important;
   overflow-y: hidden !important;
 }
 
@@ -264,7 +265,7 @@ nav#nav-categorie a.close-menu {
 }
 .nav-sottocategorie .contenitore-sottocategorie {
   padding-left: 35px;
-  padding-right: 5px;
+  /* padding-right: 5px; */
 }
 
 #tab-personalizzato {

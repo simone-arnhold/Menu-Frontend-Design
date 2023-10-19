@@ -1,3 +1,4 @@
+const html = document.querySelector("html")
 const body = document.querySelector("body")
 const contenitoreSito = document.querySelector(".contenitore-sito")
 const navCategorieButton = document.querySelector(".nav-categorie-btn")
@@ -10,8 +11,9 @@ const allergeniInfoButtons = document.querySelectorAll(".allergeni-info")
 
 // navbar
 navCategorieButton.addEventListener("click", () => {
-    body.classList.toggle("no-overflow-y")
-    contenitoreSito.classList.toggle("no-overflow-y")
+    body.classList.toggle("no-overflow")
+    body.classList.toggle("no-overflow")
+    contenitoreSito.classList.toggle("no-overflow")
     navCategorieButton.classList.toggle("open")
     navCategorie.classList.toggle("open")
 })
