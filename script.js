@@ -8,8 +8,8 @@ const overlayContenuto = document.querySelector(".overlay-contenuto")
 const overlayCloseButton = document.querySelector(".overlay-close-btn")
 const allergeniInfoButtons = document.querySelectorAll(".allergeni-info")
 
-// toggle theme
-function toggleTheme() {
+// toggle mode
+function toggleMode() {
     document.body.classList.toggle('dark-mode');
 }
 

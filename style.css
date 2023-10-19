@@ -18,13 +18,14 @@
 }
 
 * {
-  /* transition for dark/light theme */
+  /* transition for dark/light mode */
   transition: color 0.3s ease-in, background-color 0.3s ease-in,
-    border-bottom 0.3s ease-in, scrollbar-color 0.3s ease-in;
+    border 0.3s ease-in, border-bottom 0.3s ease-in,
+    scrollbar-color 0.3s ease-in;
   /* transition: all 0.3s ease-in; */
 }
 
-/* for light theme */
+/* for light mode */
 :root {
   --primary: #fff;
   --secondary: #404040;
@@ -36,11 +37,11 @@
   --gradientPink: linear-gradient(to top, #dad4fc 0%, #f3e7e9 100%);
 }
 
-/* light theme */
+/* light mode */
 /* @media (prefers-color-scheme: light) {
 } */
 
-/* dark theme inizio */
+/* dark mode inizio */
 body.dark-mode {
   --primary: #2e2e2e;
   --secondary: #f7f7f7;
@@ -49,9 +50,10 @@ body.dark-mode {
   --quinary: #cdcdcdb0;
 }
 
-/* dark theme fine */
+/* dark mode fine */
 
-.theme-toggle-btn {
+/* dark/light mode button */
+.mode-toggle-btn {
   position: absolute;
   bottom: 10px;
   left: 10px;
@@ -61,6 +63,9 @@ body.dark-mode {
   /* background-color: var(--primary); */
   /* color: var(--secondary); */
   background-color: var(--secondary);
+  /* color: red; */
+  /* background-image: linear-gradient(90deg, white, white 50%, #303030 50%);
+  box-shadow: 2px 2px 12px 6px rgba(0, 0, 0, 0.); */
   /* transition: background-color 1s ease-in-out; */
   cursor: pointer;
   width: 10px;
@@ -69,7 +74,7 @@ body.dark-mode {
 }
 
 /* Style the button icon */
-.theme-toggle-btn i {
+.mode-toggle-btn i {
   font-size: 24px;
 }
 
@@ -515,7 +520,9 @@ nav#nav-categorie a.close-menu {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 1rem 1rem;
-  border-bottom: 1px solid #dee2e6;
+  background-color: #f7f7f7;
+  border: none;
+  /* border-bottom: 1px solid #000; */
   border-top-left-radius: calc(0.3rem - 1px);
   border-top-right-radius: calc(0.3rem - 1px);
 }
@@ -557,14 +564,12 @@ nav#nav-categorie a.close-menu {
   transform: rotate(45deg);
 }
 
-.overlay-header {
-  border: none;
-}
-
 .overlay-body {
   padding: 0rem 1.8rem 1.8rem 1.8rem;
-  /* ignore light/dark theme */
+  /* ignore light/dark mode */
   background-color: #f7f7f7;
+  border-bottom-left-radius: calc(0.3rem - 1px);
+  border-bottom-right-radius: calc(0.3rem - 1px);
 }
 
 /* icone allergeni old, flex */
