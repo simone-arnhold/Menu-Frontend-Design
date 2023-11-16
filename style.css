@@ -22,7 +22,6 @@
   transition: color 0.3s ease-in, background-color 0.3s ease-in,
     border 0.3s ease-in, border-bottom 0.3s ease-in,
     scrollbar-color 0.3s ease-in;
-  /* transition: all 0.3s ease-in; */
 }
 
 /* for light mode */
@@ -30,7 +29,7 @@
   --primary: #fff;
   --secondary: #404040;
   --tertiary: #cdcdcdb0;
-  --quaternary: #000;
+  --quaternary: #202020;
   --quinary: #253843;
   --senary: #00eeff;
   --border1: 1px solid var(--tertiary);
@@ -41,6 +40,28 @@
 /* @media (prefers-color-scheme: light) {
 } */
 
+/* Hide scrollbar for browsers */
+/* Chrome Safari Opera */
+/* IE and Edge */
+/* Firefox */
+html ::-webkit-scrollbar {
+  display: none;
+}
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none !important;
+}
+
+body {
+  font-family: "Figtree-regular", sans-serif;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(to top, #dad4fc 0%, #f3e7e9 100%);
+  width: 100% !important;
+  overflow-x: hidden;
+}
+
 /* dark mode inizio */
 body.dark-mode {
   --primary: #2e2e2e;
@@ -49,7 +70,6 @@ body.dark-mode {
   --quaternary: #fdfdfd;
   --quinary: #cdcdcdb0;
 }
-
 /* dark mode fine */
 
 /* dark/light mode button */
@@ -76,14 +96,6 @@ body.dark-mode {
 /* Style the button icon */
 .mode-toggle-btn i {
   font-size: 24px;
-}
-
-body {
-  font-family: "Figtree-regular", sans-serif;
-  height: auto;
-  margin: 0;
-  padding: 0;
-  background-image: linear-gradient(to top, #dad4fc 0%, #f3e7e9 100%);
 }
 
 a {
@@ -159,9 +171,8 @@ nav#nav-categorie {
   top: 0;
   right: 0;
   width: 100%;
-  height: auto;
-  background-color: var(--primary);
   height: 100%;
+  background-color: var(--primary);
   z-index: 100;
   opacity: 0;
   transition: all 0.3s ease;

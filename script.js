@@ -21,7 +21,7 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 
 // navbar
 navCategorieButton.addEventListener("click", () => {
-    body.classList.toggle("no-overflow")
+    html.classList.toggle("no-overflow")
     body.classList.toggle("no-overflow")
     contenitoreSito.classList.toggle("no-overflow")
     navCategorieButton.classList.toggle("open")
@@ -41,7 +41,6 @@ allergeniInfoButtons.forEach(button => {
 
 // close allergeni overlay on button click
 overlayCloseButton.addEventListener("click", () => {
-    // stopPropagation() prevents event from triggering twice from the below function
     event.stopPropagation()
     overlayAllergeni.classList.toggle("show")
     overlayContenuto.classList.toggle("fadeIn")
