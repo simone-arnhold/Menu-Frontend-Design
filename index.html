@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- nota: TODO favicon placeholder-->
-    <link rel="icon" type="image/png" href=(resources/images/shape_circle_icon.png" />
+    <link rel="icon" type="image/png" href="resources/images/shape_circle_icon.png" />
     <link rel="stylesheet" href="style.css">
     <!-- font awesome link cdn js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -78,7 +78,10 @@
                 </div>
             </section>
 
+            <button type="button" class="refresh-btn">Refresh Content</button>
+
             <section id="contenuto-personalizzato">
+
                 <div class="contenitore-piatti">
                     <!-- sottocategoria-pannello  -->
                     <div class="sottocategoria-pannello selezionato" id="tab1" role="tabpanel"
@@ -111,7 +114,7 @@
                                 </p>
                             </div>
                         </div>
-                        <!-- esempio di singolo elemento del menù .piatto, border red -->
+                        <!-- esempio di singolo elemento del menù .piatto -->
                         <div class="piatto" id="el_000001">
                             <div class="riga contenitore-immagine">
                                 <div class="contenuto-immagine"
@@ -138,7 +141,6 @@
                                 </p>
                             </div>
                         </div>
-                        <!-- esempio di singolo elemento del menù .piatto, border red -->
                         <div class="piatto" id="el_000001">
                             <div class="riga contenitore-immagine">
                                 <div class="contenuto-immagine"
@@ -147,8 +149,6 @@
                             </div>
                             <div class="riga contenitore-testo">
                                 <script>
-                                    // gli allergeni con item={value} otterranno la classe "on"
-                                    // allergeni_items["i_000001"] = { "allergeni": { "0": 32, "1": 33, "2": 35 } };
                                 </script>
                                 <h3 class="titolo-piatto">Wagyu Usuzukuri A5</h3>
                                 <div class="allergeni-info">

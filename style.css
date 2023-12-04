@@ -498,7 +498,7 @@ nav#nav-categorie a.close-menu {
   position: relative;
   -ms-flex: 0 0 100%;
   flex: 0 0 100%;
-  max-width: 100%;
+  width: 100%;
   padding-right: 36px;
 }
 /* Fine contenuto */
@@ -628,4 +628,33 @@ nav#nav-categorie a.close-menu {
 }
 /* overlay fine */
 
-/* modifiche successive */
+/* modifiche successive 04/12/23 */
+div.contenitore-piatti {
+  border: 1px solid red;
+}
+
+.piatto {
+  border: 1px solid lightskyblue;
+}
+
+/* button content refresh DEV */
+button {
+  padding: 0.5rem 0.7rem;
+  font-size: 1.2rem;
+  text-align: center;
+  white-space: nowrap;
+  font-family: inherit;
+  border: none;
+  margin: 3px;
+  border-radius: 0px;
+  cursor: pointer;
+  /* border-bottom: 3px solid var(--quaternary); */
+  /* background-color: transparent; */
+
+  border-bottom: 3px solid greenyellow;
+  background-color: greenyellow;
+  transition: 300ms ease-out;
+}
+button:hover {
+  filter: saturate(3) brightness(0.8);
+}

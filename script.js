@@ -50,3 +50,12 @@ overlayAllergeni.addEventListener("click", () => {
     overlayAllergeni.classList.toggle("show")
     overlayContenuto.classList.toggle("fadeIn")
 })
+
+
+// button content refresh DEV
+const refreshButton = document.querySelector(".refresh-btn")
+
+refreshButton.addEventListener("click", () => {
+    let contenutoPersonalizzato = document.querySelector("#contenuto-personalizzato")
+    contenutoPersonalizzato.innerHTML = ""
+})
