@@ -8,6 +8,19 @@
   .contenitore-main {
     max-width: 780px;
   }
+
+  .navbar {
+    z-index: 1 !important;
+  }
+
+  /* .nav-categorie-header {
+     opacity: 0;
+    transition: 0.3s ease-in !important;
+  }
+
+    .nav-categorie-header .open {
+    opacity: 1; 
+  } */
 }
 
 /* css per mobile */
@@ -34,6 +47,7 @@
   --senary: #00eeff;
   --border1: 1px solid var(--tertiary);
   --gradientPink: linear-gradient(to top, #dad4fc 0%, #f3e7e9 100%);
+  --padding-value: 20px;
 }
 
 /* light mode */
@@ -109,6 +123,7 @@ a {
 }
 
 .navbar-brand {
+  flex: 0;
   font-size: 1.6rem;
   font-weight: 700;
   white-space: inherit;
@@ -119,12 +134,16 @@ a {
 }
 
 .navbar-logo img {
-  flex: 0;
+  flex: 10; /*max priority on flex*/
+  /* Modifiche da Nuove note 11.12.2023  */
   max-width: 120px;
+  max-width: 200px;
+  max-height: 200px;
 }
 
 .nav-categorie-btn,
 .overlay-close-btn {
+  flex: 0;
   padding: 0.25rem 0 0.25rem 0.75rem;
   z-index: 1000;
   transition: transform 1s cubic-bezier(0.22, 1, 0.22, 1);
@@ -133,8 +152,12 @@ a {
 }
 
 .nav-categorie-btn.open {
+  /* Modifiche da Nuove note 11.12.2023 
   transform: rotate(-135deg) translateZ(0px);
-  transform-origin: center;
+  transform-origin: center; 
+  */
+
+  /* visibility: hidden; */
 }
 
 .nav-categorie-btn span.menu-line,
@@ -156,6 +179,8 @@ a {
 }
 
 .navbar {
+  z-index: 101;
+  height: 200px;
   background-color: var(--primary);
   display: flex;
   flex-wrap: wrap;
@@ -182,6 +207,9 @@ nav#nav-categorie {
 }
 
 nav#nav-categorie.open {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   z-index: 100;
   opacity: 1;
   transition: all 0.3s ease;
@@ -196,7 +224,11 @@ nav#nav-categorie a.close-menu {
 }
 
 #nav-categorie .nav-categorie-header {
-  padding: 28px 35px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 200px;
 }
 
 #nav-categorie .linguaggi {
@@ -223,20 +255,24 @@ nav#nav-categorie a.close-menu {
 }
 
 #nav-categorie .nav-categorie-body {
+  flex: 1;
   width: 100%;
   max-width: 100%;
   max-height: 100%;
   overflow-y: auto;
-  position: absolute;
-  top: 120px;
-  bottom: 120px;
+  /* Modifiche da Nuove note 11.12.2023  */
+  /* position: absolute; */
+  /* top: 120px;
+  bottom: 120px; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 #nav-categorie .inner {
-  width: 80%;
+  /* justify-content: center;
+  align-items: center; */
+  width: 75%;
 }
 
 #nav-categorie .nav-categorie-body ul {
@@ -247,8 +283,7 @@ nav#nav-categorie a.close-menu {
 #nav-categorie .nav-categorie-body li {
   list-style: none;
   font-size: 1.4rem;
-  font-weight: 700;
-  border-top: 1px solid #cdcdcd;
+  font-weight: 400;
   text-align: center;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -256,8 +291,16 @@ nav#nav-categorie a.close-menu {
   overflow: hidden;
 }
 
-#nav-categorie .nav-categorie-body li:last-child {
-  border-bottom: 1px solid var(--tertiary);
+#nav-categorie .nav-categorie-body li:not(:last-child) {
+  /* border-bottom: 2px solid var(--tertiary); */
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(
+    0.25turn,
+    rgba(255, 255, 255, 0),
+    var(--tertiary),
+    rgba(255, 255, 255, 0)
+  );
+  border-image-slice: 1;
 }
 
 #nav-categorie .nav-categorie-body li a {
@@ -271,10 +314,10 @@ nav#nav-categorie a.close-menu {
   opacity: 1;
 }
 #nav-categorie .nav-categorie-footer {
-  position: absolute;
-  bottom: 5%;
-  right: 0%;
-  padding: 25px 35px;
+  display: flex;
+  justify-content: center;
+  padding: 55px 35px;
+  width: 100%;
 }
 .logo {
   margin: auto;
@@ -306,10 +349,12 @@ nav#nav-categorie a.close-menu {
 /* Categorie */
 .nav-sottocategorie {
   margin-top: 16px;
-  border-bottom: 3px solid var(--tertiary);
+  /* Modifiche da Nuove note 11.12.2023  */
+  /* border-bottom: 3px solid var(--tertiary); */
 }
 .nav-sottocategorie .contenitore-sottocategorie {
-  padding-left: 35px;
+  padding-left: var(--padding-value);
+  padding-right: var(--padding-value);
 }
 
 #tab-personalizzato {
@@ -345,21 +390,24 @@ nav#nav-categorie a.close-menu {
   overflow-x: auto;
   overflow-y: hidden;
   flex-wrap: nowrap;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
 }
 #tab-personalizzato .nav-link {
-  padding: 0.5rem 0.7rem;
+  margin: 0.5rem 0.7rem;
   font-size: 1.2rem;
   text-align: center;
 }
 
 .nav-pills .nav-link {
   border-radius: 0;
-  color: var(--secondary);
+  color: var(--tertiary);
   font-weight: 700;
 }
 .nav-pills .nav-link.selezionato,
 .nav-pills .show > .nav-link {
   background-color: transparent;
+  color: var(--secondary);
   margin-bottom: 6px;
   border-bottom: 3px solid var(--quaternary);
 }
@@ -392,7 +440,7 @@ nav#nav-categorie a.close-menu {
 }
 .contenitore-piatti {
   display: flex;
-  padding: 35px;
+  padding: var(--padding-value);
 }
 
 .sottocategoria-pannello {

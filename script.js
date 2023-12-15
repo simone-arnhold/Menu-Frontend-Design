@@ -3,6 +3,7 @@ const body = document.querySelector("body")
 const contenitoreSito = document.querySelector(".contenitore-sito")
 const navCategorieButton = document.querySelector(".nav-categorie-btn")
 const navCategorie = document.querySelector("#nav-categorie")
+const navCategorieHeader = document.querySelector(".nav-categorie-header")
 const overlayAllergeni = document.querySelector(".overlay-allergeni")
 const overlayContenuto = document.querySelector(".overlay-contenuto")
 const overlayCloseButton = document.querySelector(".overlay-close-btn")
@@ -26,7 +27,24 @@ navCategorieButton.addEventListener("click", () => {
     contenitoreSito.classList.toggle("no-overflow")
     navCategorieButton.classList.toggle("open")
     navCategorie.classList.toggle("open")
+    navCategorieHeader.classList.toggle("open")
 })
+
+
+// sottocategorie menu
+// enable scrollwheel
+const sottocategorie = document.querySelector(".nav-justified")
+sottocategorie.addEventListener("wheel", function (e) {
+    // e.preventDefault()
+    if (e.deltaY > 0) {
+        sottocategorie.scrollLeft += 100 //scroll right
+    } else {
+        sottocategorie.scrollLeft -= 100 //scroll left
+    }
+})
+
+
+
 
 // open allergeni menu
 // TODO leggi lista allergeni da elemento es.allergeni_items["i_000001"] = { "allergeni": { "0": 32, "1": 33, "2": 35 } };
@@ -54,8 +72,14 @@ overlayAllergeni.addEventListener("click", () => {
 
 // button content refresh DEV
 const refreshButton = document.querySelector(".refresh-btn")
-
 refreshButton.addEventListener("click", () => {
     let contenutoPersonalizzato = document.querySelector("#contenuto-personalizzato")
     contenutoPersonalizzato.innerHTML = ""
 })
+// read JSON via fetch
+fetch("menu-data-example.json")
+    .then((response) => response.json())
+    .then((json) => console.log(json))
+
+const categorie = json["piatti"].map(item => item["categoria-id"])
+console.log(categorie)
