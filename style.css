@@ -18,6 +18,15 @@
   } */
 
   /* logo inside the menu for the desktop version */
+
+  .ristorante-logo {
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  .nav-categorie-body {
+    padding-top: 0px !important;
+  }
 }
 
 /* css per mobile */
