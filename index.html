@@ -72,13 +72,18 @@
             <section class="nav-sottocategorie">
                 <div class="contenitore-sottocategorie">
                     <nav class="nav nav-pills nav-justified tabbable" id="tab-personalizzato" role="tablist">
-                        <div class="nav-sottocategoria" onclick="apriSottocategoria(event, 'Antipasti')">Antipasti</div>
-                        <div class="nav-sottocategoria selezionato" onclick="apriSottocategoria(event, 'Sushi')">Sushi
+                        <div class="nav-sottocategoria selezionato" onclick="apriSottocategoria(event, 'Antipasti')">
+                            Antipasti</div>
+                        <div class="nav-sottocategoria" onclick="apriSottocategoria(event, 'Sushi')">Sushi
                         </div>
                         <div class="nav-sottocategoria" onclick="apriSottocategoria(event, 'Piatti Caldi')">Piatti Caldi
                         </div>
                         <div class="nav-sottocategoria" onclick="apriSottocategoria(event, 'Tempura')">Tempura</div>
-                        <div class="nav-sottocategoria" onclick="apriSottocategoria(event, 'Uramaki')">Uramaki</div>
+                        <div class="nav-sottocategoria" onclick="apriSottocategoria(event, 'Uramaki')">
+                            Uramaki</div>
+                        <!-- <div class="nav-sottocategoria selezionato"
+                            onclick="apriSottocategoria(event, 'Vini Bianchi DEV')">
+                            Vini Bianchi</div> -->
                     </nav>
                 </div>
             </section>
@@ -87,7 +92,8 @@
 
                 <div class="contenitore-piatti">
                     <!-- sottocategoria-pannello  -->
-                    <div class="sottocategoria-pannello" id="Antipasti" aria-labelledby="nav-sottocategoria">
+                    <div class="sottocategoria-pannello selezionato" id="Antipasti"
+                        aria-labelledby="nav-sottocategoria">
                         <div class="piatto" id="el_000000">
                             <div class="riga contenitore-immagine">
                                 <div class="contenuto-immagine"
@@ -110,8 +116,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="sottocategoria-pannello selezionato" id="Sushi"
-                        aria-labelledby="nav-sottocategoria selezionato">
+                    <div class="sottocategoria-pannello" id="Sushi" aria-labelledby="nav-sottocategoria selezionato">
                         <!-- esempio di singolo elemento del menù .piatto -->
                         <div class="piatto" id="el_000001">
                             <div class="riga contenitore-immagine">
@@ -262,86 +267,85 @@
                     </div>
                 </div>
         </div>
+    </div>
 
-        <!-- overlay allergeni -->
-        <div class="overlay-allergeni">
-            <div class="overlay-contenuto">
-                <div class="overlay-header">
-                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <!-- overlay allergeni -->
+    <div class="overlay-allergeni">
+        <div class="overlay-contenuto">
+            <div class="overlay-header">
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">×</span></button> -->
-                    <a href="#" class="overlay-close-btn">
-                        <span class="menu-line"></span>
-                        <span class="menu-line"></span>
-                    </a>
-                </div>
-                <div class="overlay-body">
-                    <h2>Allergeni</h2>
-                    <ul class="overlay-icone">
-                        <li class="overlay-icona" item="30">
-                            <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/30_Cereali-48px.png" alt="">
-                            <p class="titolo">Cereali</p>
-                        </li>
-                        <li class="overlay-icona" item="31">
-                            <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/31_Crostacei-48px.png" alt="">
-                            <p class="titolo">Crostacei</p>
-                        </li>
-                        <li class="overlay-icona" item="32">
-                            <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/32_Uova-48px.png" alt="">
-                            <p class="titolo">Uova</p>
-                        </li>
-                        <li class="overlay-icona" item="33">
-                            <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/33_Pesce-48px.png" alt="">
-                            <p class="titolo">Pesce</p>
-                        </li>
-                        <li class="overlay-icona" item="34">
-                            <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/34_Arachidi-48px.png" alt="">
-                            <p class="titolo">Arachidi</p>
-                        </li>
-                        <li class="overlay-icona" item="35">
-                            <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/35_Soia-48px.png" alt="">
-                            <p class="titolo">Soia</p>
-                        </li>
-                        <li class="overlay-icona" item="36">
-                            <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/36_Latte-48px.png" alt="">
-                            <p class="titolo">Latte</p>
-                        </li>
-                        <li class="overlay-icona" item="37">
-                            <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/37_Frutta_a_guscio-48px.png"
-                                alt="">
-                            <p class="titolo">Frutta a guscio</p>
-                        </li>
-                        <li class="overlay-icona" item="38">
-                            <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/38_Sedano-48px.png" alt="">
-                            <p class="titolo">Sedano</p>
-                        </li>
-                        <li class="overlay-icona" item="39">
-                            <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/39_Senape-48px.png" alt="">
-                            <p class="titolo">Senape</p>
-                        </li>
-                        <li class="overlay-icona" item="40">
-                            <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/40_Semi_di_sesamo-48px.png"
-                                alt="">
-                            <p class="titolo">Semi di sesamo</p>
-                        </li>
-                        <li class="overlay-icona" item="41">
-                            <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/41_Anidride_solforsa-48px.png"
-                                alt="">
-                            <p class="titolo">Anidride solforosa</p>
-                        </li>
-                        <li class="overlay-icona" item="42">
-                            <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/42_Lupini-48px.png" alt="">
-                            <p class="titolo">Lupini</p>
-                        </li>
-                        <li class="overlay-icona" item="43">
-                            <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/43_Molluschi-48px.png" alt="">
-                            <p class="titolo">Molluschi</p>
-                        </li>
-                    </ul>
-                </div>
+                <a href="#" class="overlay-close-btn">
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                </a>
+            </div>
+            <div class="overlay-body">
+                <h2>Allergeni</h2>
+                <ul class="overlay-icone">
+                    <li class="overlay-icona" item="30">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/30_Cereali-48px.png" alt="">
+                        <p class="titolo">Cereali</p>
+                    </li>
+                    <li class="overlay-icona" item="31">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/31_Crostacei-48px.png" alt="">
+                        <p class="titolo">Crostacei</p>
+                    </li>
+                    <li class="overlay-icona" item="32">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/32_Uova-48px.png" alt="">
+                        <p class="titolo">Uova</p>
+                    </li>
+                    <li class="overlay-icona" item="33">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/33_Pesce-48px.png" alt="">
+                        <p class="titolo">Pesce</p>
+                    </li>
+                    <li class="overlay-icona" item="34">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/34_Arachidi-48px.png" alt="">
+                        <p class="titolo">Arachidi</p>
+                    </li>
+                    <li class="overlay-icona" item="35">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/35_Soia-48px.png" alt="">
+                        <p class="titolo">Soia</p>
+                    </li>
+                    <li class="overlay-icona" item="36">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/36_Latte-48px.png" alt="">
+                        <p class="titolo">Latte</p>
+                    </li>
+                    <li class="overlay-icona" item="37">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/37_Frutta_a_guscio-48px.png" alt="">
+                        <p class="titolo">Frutta a guscio</p>
+                    </li>
+                    <li class="overlay-icona" item="38">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/38_Sedano-48px.png" alt="">
+                        <p class="titolo">Sedano</p>
+                    </li>
+                    <li class="overlay-icona" item="39">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/39_Senape-48px.png" alt="">
+                        <p class="titolo">Senape</p>
+                    </li>
+                    <li class="overlay-icona" item="40">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/40_Semi_di_sesamo-48px.png" alt="">
+                        <p class="titolo">Semi di sesamo</p>
+                    </li>
+                    <li class="overlay-icona" item="41">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/41_Anidride_solforsa-48px.png"
+                            alt="">
+                        <p class="titolo">Anidride solforosa</p>
+                    </li>
+                    <li class="overlay-icona" item="42">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/42_Lupini-48px.png" alt="">
+                        <p class="titolo">Lupini</p>
+                    </li>
+                    <li class="overlay-icona" item="43">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/43_Molluschi-48px.png" alt="">
+                        <p class="titolo">Molluschi</p>
+                    </li>
+                </ul>
             </div>
         </div>
+    </div>
 
-        </section>
+    </section>
 
     </div>
 

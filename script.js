@@ -83,6 +83,8 @@ function apriCategoria(evt, IDcategoria) {
 
     // attiva bottoni degli allergeni TODO non funziona come inteso, probabilmente dipende da scope delle variabili
     attivaAllergeni()
+    // accordion vini ricarica
+    accordionVini()
 
     // seleziona di default prima opzione
 
@@ -151,6 +153,23 @@ overlayAllergeni.addEventListener("click", (event) => {
     overlayContenuto.classList.toggle("fadeIn")
 })
 
+// accordion vini ---
+function accordionVini() {
+    var acc = document.getElementsByClassName("accordion");
+
+    Array.from(acc).forEach(function (accordion) {
+
+        accordion.addEventListener("click", function () {
+            this.classList.toggle("active")
+            var panel = this.nextElementSibling
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px"
+            }
+        })
+    })
+}
 
 
 // ---- JSON UNIMPLEMENTED TESTS ----

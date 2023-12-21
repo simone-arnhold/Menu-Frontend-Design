@@ -542,7 +542,7 @@ nav#nav-categorie a.close-menu {
 .piatto .allergeni-info {
   display: inline;
   position: absolute;
-  right: 0px;
+  right: var(--left-right-standard-padding);
 }
 
 .allergeni-info a {
@@ -575,12 +575,12 @@ nav#nav-categorie a.close-menu {
   border-radius: 10px;
 }
 
-.piatto .contenitore-testo {
-  position: relative;
+.riga.contenitore-testo {
+  /* position: relative; */
   -ms-flex: 0 0 100%;
   flex: 0 0 100%;
   width: 100%;
-  padding-right: 36px;
+  /* padding-right: 36px; */
 }
 /* Fine contenuto */
 
@@ -721,9 +721,11 @@ div.sottocategoria-pannello {
 } */
 
 /* button default styling */
-button {
-  padding: 0.5rem 0.7rem;
+button.accordion {
+  margin: -1px !important;
+  padding: 0.7rem 0;
   font-size: 1.2rem;
+  font-weight: 700;
   text-align: center;
   white-space: nowrap;
   font-family: inherit;
@@ -731,14 +733,48 @@ button {
   margin: 3px;
   border-radius: 0px;
   cursor: pointer;
-  /* border-bottom: 3px solid var(--quaternary); */
-  /* background-color: transparent; */
-  border-bottom: 3px solid #94ff6a;
-  background-color: #94ff6a;
-  transition: 300ms ease-out;
+  width: 100%;
+  text-align: left;
+  background-color: var(--primary);
+  color: var(--quaternary);
+  border: var(--border1);
+  border-left: none;
+  border-right: none;
 }
-button:hover {
-  filter: saturate(3) brightness(0.8);
+
+button.accordion.active,
+button.accordion:hover {
+  background-color: var(--tertiary);
+  color: var(--quinary);
+}
+
+div.panel {
+  max-height: 0;
+  padding: 0 18px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+div.panel h3,
+div.vini h2 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.1em;
+  /* font-size: inherit; */
+  color: var(--tertiary);
+  margin: 12px 0 8px 0;
+}
+
+div.panel h4 {
+  font-weight: 700;
+  font-size: 1em;
+  margin: 8px 0 8px 0;
+  color: var(--secondary);
+}
+
+div.panel p {
+  margin: 8px 0 8px 0;
+  color: var(--secondary);
 }
 
 /* dev todo remove */
