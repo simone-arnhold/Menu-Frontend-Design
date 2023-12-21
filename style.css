@@ -14,13 +14,24 @@
   }
 
   /* .nav-categorie-header {
-     opacity: 0;
-    transition: 0.3s ease-in !important;
+    min-height: 200px;
+  } */
+
+  /* logo inside the menu for the desktop version */
+  .navbar-logo.fadein-logo {
+    opacity: 0;
+    transition: opacity 1300ms ease-in-out;
   }
 
-    .nav-categorie-header .open {
-    opacity: 1; 
-  } */
+  .navbar-logo.fadein-logo.fadein {
+    opacity: 1;
+    transition-delay: 600ms;
+  }
+
+  .navbar-logo.fadein-logo img {
+    max-width: 300px;
+    max-height: 300px;
+  }
 }
 
 /* css per mobile */
@@ -34,7 +45,7 @@
   /* transition for dark/light mode */
   transition: color 0.3s ease-in, background-color 0.3s ease-in,
     border 0.3s ease-in, border-bottom 0.3s ease-in,
-    scrollbar-color 0.3s ease-in;
+    scrollbar-color 0.3s ease-in, border-width 0ms ease;
 }
 
 /* for light mode */
@@ -47,7 +58,7 @@
   --senary: #00eeff;
   --border1: 1px solid var(--tertiary);
   --gradientPink: linear-gradient(to top, #dad4fc 0%, #f3e7e9 100%);
-  --padding-value: 20px;
+  --left-right-standard-padding: 20px;
 }
 
 /* light mode */
@@ -88,6 +99,9 @@ body.dark-mode {
 
 /* dark/light mode button */
 .mode-toggle-btn {
+  /* Modifiche da Nuove note 11.12.2023  */
+  display: none;
+
   position: absolute;
   bottom: 10px;
   left: 10px;
@@ -105,11 +119,6 @@ body.dark-mode {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-}
-
-/* Style the button icon */
-.mode-toggle-btn i {
-  font-size: 24px;
 }
 
 a {
@@ -154,10 +163,8 @@ a {
 .nav-categorie-btn.open {
   /* Modifiche da Nuove note 11.12.2023 
   transform: rotate(-135deg) translateZ(0px);
-  transform-origin: center; 
-  */
-
-  /* visibility: hidden; */
+  transform-origin: center;  */
+  visibility: hidden;
 }
 
 .nav-categorie-btn span.menu-line,
@@ -180,7 +187,7 @@ a {
 
 .navbar {
   z-index: 101;
-  height: 200px;
+  min-height: 200px;
   background-color: var(--primary);
   display: flex;
   flex-wrap: wrap;
@@ -228,7 +235,8 @@ nav#nav-categorie a.close-menu {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 200px;
+  min-height: 180px;
+  padding-top: 20px;
 }
 
 #nav-categorie .linguaggi {
@@ -353,8 +361,8 @@ nav#nav-categorie a.close-menu {
   /* border-bottom: 3px solid var(--tertiary); */
 }
 .nav-sottocategorie .contenitore-sottocategorie {
-  padding-left: var(--padding-value);
-  padding-right: var(--padding-value);
+  padding-left: var(--left-right-standard-padding);
+  padding-right: var(--left-right-standard-padding);
 }
 
 #tab-personalizzato {
@@ -393,27 +401,25 @@ nav#nav-categorie a.close-menu {
   overscroll-behavior: contain;
   scroll-behavior: smooth;
 }
-#tab-personalizzato .nav-link {
+.nav-sottocategoria {
   margin: 0.5rem 0.7rem;
   font-size: 1.2rem;
   text-align: center;
-}
-
-.nav-pills .nav-link {
+  cursor: pointer;
+  white-space: nowrap;
   border-radius: 0;
   color: var(--tertiary);
   font-weight: 700;
 }
-.nav-pills .nav-link.selezionato,
-.nav-pills .show > .nav-link {
+
+.nav-sottocategoria.selezionato,
+.nav-pills .show > .nav-sottocategoria {
   background-color: transparent;
   color: var(--secondary);
   margin-bottom: 6px;
   border-bottom: 3px solid var(--quaternary);
 }
-.tabbable.nav-pills .nav-link {
-  white-space: nowrap;
-}
+
 /* Fine categorie*/
 
 .contenitore-sito {
@@ -440,11 +446,26 @@ nav#nav-categorie a.close-menu {
 }
 .contenitore-piatti {
   display: flex;
-  padding: var(--padding-value);
+  padding: var(--left-right-standard-padding);
 }
 
 .sottocategoria-pannello {
   width: 100%;
+  display: none;
+}
+
+.sottocategoria-pannello.selezionato {
+  display: block;
+  animation: fade 300ms ease-in-out;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .riga {
@@ -676,16 +697,18 @@ nav#nav-categorie a.close-menu {
 }
 /* overlay fine */
 
-/* modifiche successive 04/12/23 */
-div.contenitore-piatti {
-  border: 1px solid red;
+/* dev todo check dimensions*/
+/* div.contenitore-piatti {
+  border: 3px solid red;
 }
-
+div.sottocategoria-pannello {
+  border: 2px solid greenyellow;
+}
 .piatto {
   border: 1px solid lightskyblue;
-}
+} */
 
-/* button content refresh DEV */
+/* button default styling */
 button {
   padding: 0.5rem 0.7rem;
   font-size: 1.2rem;
@@ -698,11 +721,15 @@ button {
   cursor: pointer;
   /* border-bottom: 3px solid var(--quaternary); */
   /* background-color: transparent; */
-
-  border-bottom: 3px solid greenyellow;
-  background-color: greenyellow;
+  border-bottom: 3px solid #94ff6a;
+  background-color: #94ff6a;
   transition: 300ms ease-out;
 }
 button:hover {
   filter: saturate(3) brightness(0.8);
+}
+
+/* dev todo remove */
+.refresh-btn {
+  display: none;
 }

@@ -4,6 +4,7 @@ const contenitoreSito = document.querySelector(".contenitore-sito")
 const navCategorieButton = document.querySelector(".nav-categorie-btn")
 const navCategorie = document.querySelector("#nav-categorie")
 const navCategorieHeader = document.querySelector(".nav-categorie-header")
+const fadeinLogo = document.querySelector(".fadein-logo")
 const overlayAllergeni = document.querySelector(".overlay-allergeni")
 const overlayContenuto = document.querySelector(".overlay-contenuto")
 const overlayCloseButton = document.querySelector(".overlay-close-btn")
@@ -21,27 +22,28 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 
 
 // navbar
-navCategorieButton.addEventListener("click", () => {
+navCategorieButton.addEventListener("click", (event) => {
     html.classList.toggle("no-overflow")
     body.classList.toggle("no-overflow")
     contenitoreSito.classList.toggle("no-overflow")
     navCategorieButton.classList.toggle("open")
     navCategorie.classList.toggle("open")
     navCategorieHeader.classList.toggle("open")
+    fadeinLogo.classList.toggle("fadein")
 })
 
 
 // sottocategorie menu
 // enable scrollwheel
-const sottocategorie = document.querySelector(".nav-justified")
-sottocategorie.addEventListener("wheel", function (e) {
-    // e.preventDefault()
-    if (e.deltaY > 0) {
-        sottocategorie.scrollLeft += 100 //scroll right
-    } else {
-        sottocategorie.scrollLeft -= 100 //scroll left
-    }
-})
+// const navJustified = document.querySelector(".nav-justified")
+// navJustified.addEventListener("wheel", function (e) {
+//     // e.preventDefault()
+//     if (e.deltaY > 0) {
+//         navJustified.scrollLeft += 100 //scroll right
+//     } else {
+//         navJustified.scrollLeft -= 100 //scroll left
+//     }
+// })
 
 
 
@@ -50,7 +52,7 @@ sottocategorie.addEventListener("wheel", function (e) {
 // TODO leggi lista allergeni da elemento es.allergeni_items["i_000001"] = { "allergeni": { "0": 32, "1": 33, "2": 35 } };
 // e attiva/disattiva allergeni in base a quali elementi sono presenti in lista
 allergeniInfoButtons.forEach(button => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (event) => {
         overlayAllergeni.classList.toggle("show")
         overlayContenuto.classList.toggle("fadeIn")
     })
@@ -58,28 +60,91 @@ allergeniInfoButtons.forEach(button => {
 
 
 // close allergeni overlay on button click
-overlayCloseButton.addEventListener("click", () => {
+overlayCloseButton.addEventListener("click", (event) => {
     event.stopPropagation()
     overlayAllergeni.classList.toggle("show")
     overlayContenuto.classList.toggle("fadeIn")
 })
 // close when clicked on overlay
-overlayAllergeni.addEventListener("click", () => {
+overlayAllergeni.addEventListener("click", (event) => {
     overlayAllergeni.classList.toggle("show")
     overlayContenuto.classList.toggle("fadeIn")
 })
 
-
 // button content refresh DEV
-const refreshButton = document.querySelector(".refresh-btn")
-refreshButton.addEventListener("click", () => {
-    let contenutoPersonalizzato = document.querySelector("#contenuto-personalizzato")
-    contenutoPersonalizzato.innerHTML = ""
-})
-// read JSON via fetch
-fetch("menu-data-example.json")
-    .then((response) => response.json())
-    .then((json) => console.log(json))
+// const refreshButton = document.querySelector(".refresh-btn")
+// refreshButton.addEventListener("click", clearContenutoPersonalizzato)
 
-const categorie = json["piatti"].map(item => item["categoria-id"])
-console.log(categorie)
+
+// parte interattiva tabs categorie
+
+// parte interattiva tabs sottocategorie
+
+// var sottocategorie = document.getElementsByClassName("nav-sottocategoria");
+// console.log(sottocategorie)
+// for (let i = 0; i < sottocategorie.length; i++) {
+//     var sottocategoria = sottocategorie[i]
+//     sottocategoria.addEventListener("click", clearContenutoPersonalizzato)
+// }
+
+// function apriSottocategorie(evt, idSottocategoria) {
+//     var i, sottocategorie, sottocategoriaPannelli
+//     // sottocategorie: i collegamenti delle sottocategorie nel nav
+//     // contenutoSottocategorie: il pannello sottocategoria
+//     sottocategorie = document.getElementsByClassName("nav-sottocategoria")
+//     for (i = 0; i < sottocategorie.length; i++) {
+//         // ripulisce gli elementi selezionati
+//         sottocategorie[i].classList.remove("selezionato")
+//     }
+//     sottocategoriaPannelli = document.getElementsByClassName("sottocategoria-pannello")
+//     for (i = 0; i < sottocategoriaPannelli.length; i++) {
+//         // sottocategoriaPannelli[i].style.display = "none"
+//     }
+//     document.getElementById(idSottocategoria).style.display = "block"
+//     evt.currentTarget.classList.add("selezionato")
+// }
+
+// // per ogni pulsante di sottocategoria, aggiungi click event per apriSottocategorie(id)
+
+// var navSottocategorie = document.getElementsByClassName("nav-sottocategoria")
+// Array.from(navSottocategorie).forEach((sottoCategoria) => {
+//     sottoCategoria.addEventListener("click", apriSottocategorie(event, sottoCategoria.id))
+// })
+
+
+// sottocategoria-pannello deve avere la classe "selezionato" per essere visibile, altrimenti display = none;
+
+
+
+
+function apriSottocategoria(evt, IDsottocategoria) {
+    // faccio una lista di tutti i link delle sottocategorie
+    sottocategorie = document.getElementsByClassName("nav-sottocategoria")
+    Array.from(sottocategorie).forEach(sottocategoria => {
+        sottocategoria.classList.remove("selezionato")
+    })
+    // faccio una lista di tutti i sottocategoria-pannello
+    sottocategoriaPannelli = document.getElementsByClassName("sottocategoria-pannello")
+    Array.from(sottocategoriaPannelli).forEach(pannello => {
+        pannello.classList.remove("selezionato")
+    })
+    // aggiunge classe "selezionato" al link
+    evt.currentTarget.classList.add("selezionato")
+    // aggiunge classe "selezionato" al sottocategoria-pannello
+    document.getElementById(IDsottocategoria).classList.add("selezionato")
+
+}
+
+
+
+// read JSON via fetch
+// fetch("menu-data-example.json")
+//     .then(response => response.json())
+//     .then(data => {
+//         var jsonData = data;
+//         console.log(data);
+//     })
+
+// const categorie = jsonData["piatti"].map(item => item["categoria-id"])
+// console.log(categorie)
+
