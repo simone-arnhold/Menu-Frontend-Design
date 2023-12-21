@@ -30,18 +30,20 @@
             </div>
             <div class="nav-categorie-body">
                 <div class="inner">
-                    <ul>
-                        <li><a href="">Menu</a></li>
-                        <li><a href="">Dolci</a></li>
-                        <li><a href="">Bevande</a></li>
-                        <li><a href="">Lista Vini</a></li>
-                        <li><a href="">Business Lunch</a></li>
+                    <ul id="nav-categorie-ul">
+                        <li><a class="selezionato" href="javascript:void(0)"
+                                onclick="apriCategoria(event, 'Menu')">Menu</a></li>
+                        <li><a href="javascript:void(0)" onclick="apriCategoria(event, 'Dolci')">Dolci</a></li>
+                        <li><a href="javascript:void(0)" onclick="apriCategoria(event, 'Bevande')">Bevande</a></li>
+                        <li><a href="javascript:void(0)" onclick="apriCategoria(event, 'Lista Vini')">Lista Vini</a>
+                        </li>
+                        <li><a href="javascript:void(0)" onclick="apriCategoria(event, 'Business Lunch')">Business
+                                Lunch</a></li>
                     </ul>
                 </div>
             </div>
             <div class="nav-categorie-footer">
 
-                <!-- Selettore linguaggi TODO imposta linguaggi su menu-->
                 <ul class="linguaggi">
                     <li class="lang-btn corrente"><a href="#">IT</a></li>
                     <li class="lang-btn"><a href="../en/index.html">EN</a></li>
@@ -50,18 +52,19 @@
         </nav>
 
         <div class="contenitore-main">
-
             <div class="navbar">
                 <a class="navbar-brand" href="#">Menu</a>
                 <a class="navbar-logo" href="#">
                     <img class="ristorante-logo" src="resources/images/ristorante-logo.png" alt="">
                 </a>
+                <!-- + menu button -->
                 <div class="nav-categorie-btn">
                     <span class="menu-line"></span>
                     <span class="menu-line"></span>
                 </div>
 
-                <button class="mode-toggle-btn" onclick="toggleMode()">
+                <!-- display:none disabled dark mode button in style -->
+                <button class="mode-toggle-btn dark-light" onclick="toggleMode()">
                 </button>
 
             </div>

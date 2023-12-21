@@ -8,21 +8,22 @@ const fadeinLogo = document.querySelector(".fadein-logo")
 const overlayAllergeni = document.querySelector(".overlay-allergeni")
 const overlayContenuto = document.querySelector(".overlay-contenuto")
 const overlayCloseButton = document.querySelector(".overlay-close-btn")
-const allergeniInfoButtons = document.querySelectorAll(".allergeni-info")
+var allergeniInfoButtons = document.querySelectorAll(".allergeni-info")
+
 
 // toggle mode
 function toggleMode() {
-    document.body.classList.toggle('dark-mode');
+    document.body.classList.toggle('dark-mode')
 }
 
 // Detect user's preference for light or dark mode
 if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.body.classList.add('dark-mode');
+    document.body.classList.add('dark-mode')
 }
 
 
 // navbar
-navCategorieButton.addEventListener("click", (event) => {
+function toggleMenu() {
     html.classList.toggle("no-overflow")
     body.classList.toggle("no-overflow")
     contenitoreSito.classList.toggle("no-overflow")
@@ -30,8 +31,126 @@ navCategorieButton.addEventListener("click", (event) => {
     navCategorie.classList.toggle("open")
     navCategorieHeader.classList.toggle("open")
     fadeinLogo.classList.toggle("fadein")
-})
+}
 
+navCategorieButton.addEventListener("click", toggleMenu)
+
+function apriCategoria(evt, IDcategoria) {
+    const categorieUL = document.querySelector("#nav-categorie-ul")
+    let categorie = categorieUL.querySelectorAll('li > a')
+    // rimuovi vecchia selezione
+    Array.from(categorie).forEach(categoria => {
+        categoria.classList.remove("selezionato")
+    })
+    // aggiungi nuova selezione di categoria
+    evt.currentTarget.classList.add("selezionato")
+    // rimuovi html delle sottocategorie e dei pannelli
+    let sottocategorie = document.getElementsByClassName("nav-sottocategoria")
+    let sottocategoriaPannelli = document.getElementsByClassName("sottocategoria-pannello")
+    Array.from(sottocategorie).forEach(sottocategoria => sottocategoria.remove())
+    Array.from(sottocategoriaPannelli).forEach(element => element.remove())
+
+    // trova nome del file html della categoria da importare
+    nomeHTML = "categorie/" + IDcategoria + ".html"
+    console.log(nomeHTML)
+
+    // // inserisci html di sottocategoria - pannelli
+    // const xhr = new XMLHttpRequest()
+    // xhr.open('GET', "categorie/Dolci.html", true)
+    // xhr.open('GET', nomeHTML, true)
+    // xhr.onreadystatechange = function () {
+    //     if (xhr.readyState === 4 && xhr.status === 200) {
+    //         const sottocategorieContent = xhr.responseText
+    //         document.querySelector(".contenitore-piatti").innerHTML = sottocategorieContent
+    //     }
+    // }
+    // xhr.send()
+
+
+    // inserisci dati di categorie e sottocategorie
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', nomeHTML, false)
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            const content = xhr.responseText
+
+            // aggiungo le nuove pills di navigazione delle sottocategorie
+            const startNavSottocategorie = content.indexOf('<nav class="nav nav-pills nav-justified tabbable" id="tab-personalizzato" role="tablist">') + '<nav class="nav nav-pills nav-justified tabbable" id="tab-personalizzato" role="tablist">'.length
+            const endNavSottocategorie = content.indexOf('</nav>', startNavSottocategorie)
+            const navSottocategorie = content.substring(startNavSottocategorie, endNavSottocategorie)
+            document.querySelector(".nav-pills").innerHTML = navSottocategorie
+            // console.log(navSottocategorie)
+
+            // aggiungo i contenuti dei piatti
+            const startContenuto = content.indexOf('</nav>')
+            // const endContenuto = content.indexOf('</div>', startContenuto)
+            const endContenuto = content.length
+            const contenuto = content.substring(startContenuto, endContenuto)
+            document.querySelector(".contenitore-piatti").innerHTML = contenuto
+            console.log(contenuto)
+            console.log(startContenuto)
+            console.log(endContenuto)
+        }
+    }
+    xhr.send()
+
+
+    // const xhr = new XMLHttpRequest();
+    // xhr.open('GET', 'file.html', true);
+    // xhr.onreadystatechange = function () {
+    //     if (xhr.readyState === 4 && xhr.status === 200) {
+    //         const content = xhr.responseText;
+    //         const start1 = content.indexOf('<div class="div1">') + '<div class="div1">'.length;
+    //         const end1 = content.indexOf('</div>', start1);
+    //         const div1Content = content.substring(start1, end1);
+
+    //         const start2 = content.indexOf('<div class="div2">') + '<div class="div2">'.length;
+    //         const end2 = content.indexOf('</div>', start2);
+    //         const div2Content = content.substring(start2, end2);
+
+    //         console.log(div1Content);
+    //         console.log(div2Content);
+    //     }
+    // };
+    // xhr.send();
+
+    // // inserisci html di sottocategoria-pannelli  
+    // const xhr = new XMLHttpRequest()
+    // // xhr.open('GET', "categorie/Dolci.html", true)
+    // xhr.open('GET', nomeHTML, true)
+    // xhr.onreadystatechange = function () {
+    //     if (xhr.readyState === 4 && xhr.status === 200) {
+    //         const sottocategorieContent = xhr.responseText
+    //         document.querySelector(".contenitore-piatti").innerHTML = sottocategorieContent
+    //     }
+    // }
+    // xhr.send()
+
+    // attiva bottoni degli allergeni TODO non funziona come inteso, probabilmente dipende da scope delle variabili
+    attivaAllergeni()
+
+    // seleziona di default prima opzione
+
+    // chiudi menu
+    toggleMenu()
+}
+
+function apriSottocategoria(evt, IDsottocategoria) {
+    // faccio una lista di tutti i link delle sottocategorie
+    let sottocategorie = document.getElementsByClassName("nav-sottocategoria")
+    Array.from(sottocategorie).forEach(sottocategoria => {
+        sottocategoria.classList.remove("selezionato")
+    })
+    // faccio una lista di tutti i sottocategoria-pannello
+    let sottocategoriaPannelli = document.getElementsByClassName("sottocategoria-pannello")
+    Array.from(sottocategoriaPannelli).forEach(pannello => {
+        pannello.classList.remove("selezionato")
+    })
+    // aggiungo classe "selezionato" al link
+    evt.currentTarget.classList.add("selezionato")
+    // aggiungo classe "selezionato" a sottocategoria-pannello
+    document.getElementById(IDsottocategoria).classList.add("selezionato")
+}
 
 // sottocategorie menu
 // enable scrollwheel
@@ -49,14 +168,21 @@ navCategorieButton.addEventListener("click", (event) => {
 
 
 // open allergeni menu
-// TODO leggi lista allergeni da elemento es.allergeni_items["i_000001"] = { "allergeni": { "0": 32, "1": 33, "2": 35 } };
+// TODO leggi lista allergeni da elemento es.allergeni_items["i_000001"] = { "allergeni": { "0": 32, "1": 33, "2": 35 } }
 // e attiva/disattiva allergeni in base a quali elementi sono presenti in lista
-allergeniInfoButtons.forEach(button => {
-    button.addEventListener("click", (event) => {
-        overlayAllergeni.classList.toggle("show")
-        overlayContenuto.classList.toggle("fadeIn")
+function attivaAllergeni() {
+    // console.log("called attivaAllergeni()")
+    // todo rivedi
+    let allergeniInfoButtons = document.querySelectorAll(".allergeni-info")
+    allergeniInfoButtons = document.querySelectorAll(".allergeni-info")
+    allergeniInfoButtons.forEach(button => {
+        button.addEventListener("click", (event) => {
+            overlayAllergeni.classList.toggle("show")
+            overlayContenuto.classList.toggle("fadeIn")
+        })
     })
-});
+}
+attivaAllergeni()
 
 // close allergeni overlay on button click
 overlayCloseButton.addEventListener("click", (event) => {
@@ -70,22 +196,6 @@ overlayAllergeni.addEventListener("click", (event) => {
     overlayContenuto.classList.toggle("fadeIn")
 })
 
-function apriSottocategoria(evt, IDsottocategoria) {
-    // faccio una lista di tutti i link delle sottocategorie
-    sottocategorie = document.getElementsByClassName("nav-sottocategoria")
-    Array.from(sottocategorie).forEach(sottocategoria => {
-        sottocategoria.classList.remove("selezionato")
-    })
-    // faccio una lista di tutti i sottocategoria-pannello
-    sottocategoriaPannelli = document.getElementsByClassName("sottocategoria-pannello")
-    Array.from(sottocategoriaPannelli).forEach(pannello => {
-        pannello.classList.remove("selezionato")
-    })
-    // aggiungo classe "selezionato" al link
-    evt.currentTarget.classList.add("selezionato")
-    // aggiungo classe "selezionato" a sottocategoria-pannello
-    document.getElementById(IDsottocategoria).classList.add("selezionato")
-}
 
 
 // ---- JSON UNIMPLEMENTED TESTS ----
@@ -94,8 +204,8 @@ function apriSottocategoria(evt, IDsottocategoria) {
 // fetch("menu-data-example.json")
 //     .then(response => response.json())
 //     .then(data => {
-//         var jsonData = data;
-//         console.log(data);
+//         var jsonData = data
+//         console.log(data)
 //     })
 
 // const categorie = jsonData["piatti"].map(item => item["categoria-id"])

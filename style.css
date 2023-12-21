@@ -263,7 +263,8 @@ nav#nav-categorie a.close-menu {
 }
 
 #nav-categorie .nav-categorie-body {
-  flex: 1;
+  /* flex: 100; */
+  flex-basis: 100%;
   width: 100%;
   max-width: 100%;
   max-height: 100%;
@@ -316,6 +317,11 @@ nav#nav-categorie a.close-menu {
   padding: 15px 0;
   line-height: 1.25rem;
 }
+#nav-categorie .nav-categorie-body li a.selezionato {
+  font-weight: 700;
+  transform: scale(1.1);
+}
+
 #nav-categorie .linguaggi .lang-btn.corrente a {
   border: 1px solid var(--primary);
   color: var(--primary);

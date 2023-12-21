@@ -1,0 +1,175 @@
+<nav class="nav nav-pills nav-justified tabbable" id="tab-personalizzato" role="tablist">
+    <div class="nav-sottocategoria" onclick="apriSottocategoria(event, 'Antipasti')">Antipasti</div>
+    <div class="nav-sottocategoria selezionato" onclick="apriSottocategoria(event, 'Sushi')">Sushi
+    </div>
+    <div class="nav-sottocategoria" onclick="apriSottocategoria(event, 'Piatti Caldi')">Piatti Caldi
+    </div>
+    <div class="nav-sottocategoria" onclick="apriSottocategoria(event, 'Tempura')">Tempura</div>
+    <div class="nav-sottocategoria" onclick="apriSottocategoria(event, 'Uramaki')">Uramaki</div>
+</nav>
+
+<div class="sottocategoria-pannello" id="Antipasti" aria-labelledby="nav-sottocategoria">
+    <div class="piatto" id="el_000000">
+        <div class="riga contenitore-immagine">
+            <div class="contenuto-immagine" style="background-image:url(resources/images/piatti/placeholder.jpeg)">
+            </div>
+        </div>
+        <div class="riga contenitore-testo">
+            <h3 class="titolo-piatto">titolo piatto</h3>
+            <div class="allergeni-info">
+                <h3><a data-toggle="overlay-allergeni-modale" data-target="allergeni-info" data-json="000001"><i
+                            class="fas fa-info-circle" aria-hidden="true"></i></a>
+                </h3>
+            </div>
+            <p class="descrizione-piatto">
+                <span>descrizione del piatto.</span>
+            </p>
+            <p class="prezzo-piatto">
+                <span><span class="valuta">€</span> -- </span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="sottocategoria-pannello selezionato" id="Sushi" aria-labelledby="nav-sottocategoria selezionato">
+    <!-- esempio di singolo elemento del menù .piatto -->
+    <div class="piatto" id="el_000001">
+        <div class="riga contenitore-immagine">
+            <div class="contenuto-immagine" style="background-image:url(resources/images/piatti/5.jpeg)">
+            </div>
+        </div>
+        <div class="riga contenitore-testo">
+            <script>
+                // gli allergeni con item={value} otterranno la classe "on"
+                // allergeni_items["i_000001"] = { "allergeni": { "0": 32, "1": 33, "2": 35 } };
+            </script>
+            <h3 class="titolo-piatto">Wagyu Usuzukuri A5</h3>
+            <div class="allergeni-info">
+                <h3><a data-toggle="overlay-allergeni-modale" data-target="allergeni-info" data-json="000001"><i
+                            class="fas fa-info-circle" aria-hidden="true"></i></a>
+                </h3>
+            </div>
+            <p class="descrizione-piatto">
+                <span>Carpaccio di manzo nobile giapponese, leggermente scottato servito con
+                    battuta di pomodoro fresco e salsa nishiki</span>
+            </p>
+            <p class="prezzo-piatto">
+                <span><span class="valuta">€</span> 26 </span>
+            </p>
+        </div>
+    </div>
+    <!-- esempio di singolo elemento del menù .piatto -->
+    <div class="piatto" id="el_000001">
+        <div class="riga contenitore-immagine">
+            <div class="contenuto-immagine" style="background-image:url(resources/images/piatti/4.jpeg)">
+            </div>
+        </div>
+        <div class="riga contenitore-testo">
+            <script>
+                // gli allergeni con item={value} otterranno la classe "on"
+                // allergeni_items["i_000001"] = { "allergeni": { "0": 32, "1": 33, "2": 35 } };
+            </script>
+            <h3 class="titolo-piatto">Wagyu Usuzukuri A5</h3>
+            <div class="allergeni-info">
+                <h3><a data-toggle="overlay-allergeni-modale" data-target="allergeni-info" data-json="000001"><i
+                            class="fas fa-info-circle" aria-hidden="true"></i></a>
+                </h3>
+            </div>
+            <p class="descrizione-piatto">
+                <span>Carpaccio di manzo nobile giapponese, leggermente scottato servito con
+                    battuta di pomodoro fresco e salsa nishiki</span>
+            </p>
+            <p class="prezzo-piatto">
+                <span><span class="valuta">€</span> 26 </span>
+            </p>
+        </div>
+    </div>
+    <div class="piatto" id="el_000001">
+        <div class="riga contenitore-immagine">
+            <div class="contenuto-immagine" style="background-image:url(resources/images/piatti/3.jpeg)">
+            </div>
+        </div>
+        <div class="riga contenitore-testo">
+            <h3 class="titolo-piatto">Wagyu Usuzukuri A5</h3>
+            <div class="allergeni-info">
+                <h3><a data-toggle="overlay-allergeni-modale" data-target="allergeni-info" data-json="000001"><i
+                            class="fas fa-info-circle" aria-hidden="true"></i></a>
+                </h3>
+            </div>
+            <p class="descrizione-piatto">
+                <span>Carpaccio di manzo nobile giapponese, leggermente scottato servito con
+                    battuta di pomodoro fresco e salsa nishiki</span>
+            </p>
+            <p class="prezzo-piatto">
+                <span><span class="valuta">€</span> 26 </span>
+            </p>
+        </div>
+    </div>
+
+
+</div>
+<div class="sottocategoria-pannello" id="Piatti Caldi" aria-labelledby="nav-sottocategoria">
+    <div class="piatto" id="el_000000">
+        <div class="riga contenitore-immagine">
+            <div class="contenuto-immagine" style="background-image:url(resources/images/piatti/placeholder.jpeg)">
+            </div>
+        </div>
+        <div class="riga contenitore-testo">
+            <h3 class="titolo-piatto">titolo piatto</h3>
+            <div class="allergeni-info">
+                <h3><a data-toggle="overlay-allergeni-modale" data-target="allergeni-info" data-json="000001"><i
+                            class="fas fa-info-circle" aria-hidden="true"></i></a>
+                </h3>
+            </div>
+            <p class="descrizione-piatto">
+                <span>descrizione del piatto.</span>
+            </p>
+            <p class="prezzo-piatto">
+                <span><span class="valuta">€</span> -- </span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="sottocategoria-pannello" id="Tempura" aria-labelledby="nav-sottocategoria">
+    <div class="piatto" id="el_000000">
+        <div class="riga contenitore-immagine">
+            <div class="contenuto-immagine" style="background-image:url(resources/images/piatti/placeholder.jpeg)">
+            </div>
+        </div>
+        <div class="riga contenitore-testo">
+            <h3 class="titolo-piatto">titolo piatto</h3>
+            <div class="allergeni-info">
+                <h3><a data-toggle="overlay-allergeni-modale" data-target="allergeni-info" data-json="000001"><i
+                            class="fas fa-info-circle" aria-hidden="true"></i></a>
+                </h3>
+            </div>
+            <p class="descrizione-piatto">
+                <span>descrizione del piatto.</span>
+            </p>
+            <p class="prezzo-piatto">
+                <span><span class="valuta">€</span> -- </span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="sottocategoria-pannello" id="Uramaki" aria-labelledby="nav-sottocategoria">
+    <div class="piatto" id="el_000000">
+        <div class="riga contenitore-immagine">
+            <div class="contenuto-immagine" style="background-image:url(resources/images/piatti/placeholder.jpeg)">
+            </div>
+        </div>
+        <div class="riga contenitore-testo">
+            <h3 class="titolo-piatto">titolo piatto</h3>
+            <div class="allergeni-info">
+                <h3><a data-toggle="overlay-allergeni-modale" data-target="allergeni-info" data-json="000001"><i
+                            class="fas fa-info-circle" aria-hidden="true"></i></a>
+                </h3>
+            </div>
+            <p class="descrizione-piatto">
+                <span>descrizione del piatto.</span>
+            </p>
+            <p class="prezzo-piatto">
+                <span><span class="valuta">€</span> -- </span>
+            </p>
+        </div>
+    </div>
+</div>
