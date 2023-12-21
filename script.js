@@ -160,6 +160,7 @@ function accordionVini() {
     Array.from(acc).forEach(function (accordion) {
 
         accordion.addEventListener("click", function () {
+
             this.classList.toggle("active")
             var panel = this.nextElementSibling
             if (panel.style.maxHeight) {

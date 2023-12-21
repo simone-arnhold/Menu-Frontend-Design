@@ -22,17 +22,16 @@
     <div class="contenitore-sito">
         <div class="overlay"></div>
         <!-- #nav-categorie si riferisce al menù a tendina + -->
-        <nav id="nav-categorie">
-            <div class="nav-categorie-header">
-                <a class="navbar-logo fadein-logo" href="#">
+        <nav id="nav-categorie" class="open">
+            <div class="nav-categorie-header open">
+                <a class="navbar-logo fadein-logo fadein" href="#">
                     <img class="ristorante-logo" src="resources/images/ristorante-logo.png" alt="">
                 </a>
             </div>
             <div class="nav-categorie-body">
                 <div class="inner">
                     <ul id="nav-categorie-ul">
-                        <li><a class="selezionato" href="javascript:void(0)"
-                                onclick="apriCategoria(event, 'Menu')">Menu</a></li>
+                        <li><a href="javascript:void(0)" onclick="apriCategoria(event, 'Menu')">Menu</a></li>
                         <li><a href="javascript:void(0)" onclick="apriCategoria(event, 'Dolci')">Dolci</a></li>
                         <li><a href="javascript:void(0)" onclick="apriCategoria(event, 'Bevande')">Bevande</a></li>
                         <li><a href="javascript:void(0)" onclick="apriCategoria(event, 'Lista Vini')">Lista Vini</a>
@@ -58,7 +57,7 @@
                     <img class="ristorante-logo" src="resources/images/ristorante-logo.png" alt="">
                 </a>
                 <!-- + menu button -->
-                <div class="nav-categorie-btn">
+                <div class="nav-categorie-btn open">
                     <span class="menu-line"></span>
                     <span class="menu-line"></span>
                 </div>
@@ -72,7 +71,7 @@
             <section class="nav-sottocategorie">
                 <div class="contenitore-sottocategorie">
                     <nav class="nav nav-pills nav-justified tabbable" id="tab-personalizzato" role="tablist">
-                        <div class="nav-sottocategoria selezionato" onclick="apriSottocategoria(event, 'Antipasti')">
+                        <div class="nav-sottocategoria" onclick="apriSottocategoria(event, 'Antipasti')">
                             Antipasti</div>
                         <div class="nav-sottocategoria" onclick="apriSottocategoria(event, 'Sushi')">Sushi
                         </div>
@@ -92,8 +91,7 @@
 
                 <div class="contenitore-piatti">
                     <!-- sottocategoria-pannello  -->
-                    <div class="sottocategoria-pannello selezionato" id="Antipasti"
-                        aria-labelledby="nav-sottocategoria">
+                    <div class="sottocategoria-pannello" id="Antipasti" aria-labelledby="nav-sottocategoria">
                         <div class="piatto" id="el_000000">
                             <div class="riga contenitore-immagine">
                                 <div class="contenuto-immagine"
@@ -116,7 +114,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="sottocategoria-pannello" id="Sushi" aria-labelledby="nav-sottocategoria selezionato">
+                    <div class="sottocategoria-pannello" id="Sushi" aria-labelledby="nav-sottocategoria">
                         <!-- esempio di singolo elemento del menù .piatto -->
                         <div class="piatto" id="el_000001">
                             <div class="riga contenitore-immagine">
