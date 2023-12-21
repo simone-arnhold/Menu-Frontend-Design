@@ -54,19 +54,6 @@ function apriCategoria(evt, IDcategoria) {
     nomeHTML = "categorie/" + IDcategoria + ".html"
     console.log(nomeHTML)
 
-    // // inserisci html di sottocategoria - pannelli
-    // const xhr = new XMLHttpRequest()
-    // xhr.open('GET', "categorie/Dolci.html", true)
-    // xhr.open('GET', nomeHTML, true)
-    // xhr.onreadystatechange = function () {
-    //     if (xhr.readyState === 4 && xhr.status === 200) {
-    //         const sottocategorieContent = xhr.responseText
-    //         document.querySelector(".contenitore-piatti").innerHTML = sottocategorieContent
-    //     }
-    // }
-    // xhr.send()
-
-
     // inserisci dati di categorie e sottocategorie
     const xhr = new XMLHttpRequest()
     xhr.open('GET', nomeHTML, false)
@@ -93,38 +80,6 @@ function apriCategoria(evt, IDcategoria) {
         }
     }
     xhr.send()
-
-
-    // const xhr = new XMLHttpRequest();
-    // xhr.open('GET', 'file.html', true);
-    // xhr.onreadystatechange = function () {
-    //     if (xhr.readyState === 4 && xhr.status === 200) {
-    //         const content = xhr.responseText;
-    //         const start1 = content.indexOf('<div class="div1">') + '<div class="div1">'.length;
-    //         const end1 = content.indexOf('</div>', start1);
-    //         const div1Content = content.substring(start1, end1);
-
-    //         const start2 = content.indexOf('<div class="div2">') + '<div class="div2">'.length;
-    //         const end2 = content.indexOf('</div>', start2);
-    //         const div2Content = content.substring(start2, end2);
-
-    //         console.log(div1Content);
-    //         console.log(div2Content);
-    //     }
-    // };
-    // xhr.send();
-
-    // // inserisci html di sottocategoria-pannelli  
-    // const xhr = new XMLHttpRequest()
-    // // xhr.open('GET', "categorie/Dolci.html", true)
-    // xhr.open('GET', nomeHTML, true)
-    // xhr.onreadystatechange = function () {
-    //     if (xhr.readyState === 4 && xhr.status === 200) {
-    //         const sottocategorieContent = xhr.responseText
-    //         document.querySelector(".contenitore-piatti").innerHTML = sottocategorieContent
-    //     }
-    // }
-    // xhr.send()
 
     // attiva bottoni degli allergeni TODO non funziona come inteso, probabilmente dipende da scope delle variabili
     attivaAllergeni()
