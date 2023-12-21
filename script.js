@@ -24,9 +24,9 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 
 // navbar
 function toggleMenu() {
-    html.classList.toggle("no-overflow")
-    body.classList.toggle("no-overflow")
-    contenitoreSito.classList.toggle("no-overflow")
+    // html.classList.toggle("no-overflow")
+    // body.classList.toggle("no-overflow")
+    // contenitoreSito.classList.toggle("no-overflow")
     navCategorieButton.classList.toggle("open")
     navCategorie.classList.toggle("open")
     navCategorieHeader.classList.toggle("open")
