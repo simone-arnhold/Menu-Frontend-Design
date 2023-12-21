@@ -58,7 +58,6 @@ allergeniInfoButtons.forEach(button => {
     })
 });
 
-
 // close allergeni overlay on button click
 overlayCloseButton.addEventListener("click", (event) => {
     event.stopPropagation()
@@ -71,52 +70,6 @@ overlayAllergeni.addEventListener("click", (event) => {
     overlayContenuto.classList.toggle("fadeIn")
 })
 
-// button content refresh DEV
-// const refreshButton = document.querySelector(".refresh-btn")
-// refreshButton.addEventListener("click", clearContenutoPersonalizzato)
-
-
-// parte interattiva tabs categorie
-
-// parte interattiva tabs sottocategorie
-
-// var sottocategorie = document.getElementsByClassName("nav-sottocategoria");
-// console.log(sottocategorie)
-// for (let i = 0; i < sottocategorie.length; i++) {
-//     var sottocategoria = sottocategorie[i]
-//     sottocategoria.addEventListener("click", clearContenutoPersonalizzato)
-// }
-
-// function apriSottocategorie(evt, idSottocategoria) {
-//     var i, sottocategorie, sottocategoriaPannelli
-//     // sottocategorie: i collegamenti delle sottocategorie nel nav
-//     // contenutoSottocategorie: il pannello sottocategoria
-//     sottocategorie = document.getElementsByClassName("nav-sottocategoria")
-//     for (i = 0; i < sottocategorie.length; i++) {
-//         // ripulisce gli elementi selezionati
-//         sottocategorie[i].classList.remove("selezionato")
-//     }
-//     sottocategoriaPannelli = document.getElementsByClassName("sottocategoria-pannello")
-//     for (i = 0; i < sottocategoriaPannelli.length; i++) {
-//         // sottocategoriaPannelli[i].style.display = "none"
-//     }
-//     document.getElementById(idSottocategoria).style.display = "block"
-//     evt.currentTarget.classList.add("selezionato")
-// }
-
-// // per ogni pulsante di sottocategoria, aggiungi click event per apriSottocategorie(id)
-
-// var navSottocategorie = document.getElementsByClassName("nav-sottocategoria")
-// Array.from(navSottocategorie).forEach((sottoCategoria) => {
-//     sottoCategoria.addEventListener("click", apriSottocategorie(event, sottoCategoria.id))
-// })
-
-
-// sottocategoria-pannello deve avere la classe "selezionato" per essere visibile, altrimenti display = none;
-
-
-
-
 function apriSottocategoria(evt, IDsottocategoria) {
     // faccio una lista di tutti i link delle sottocategorie
     sottocategorie = document.getElementsByClassName("nav-sottocategoria")
@@ -128,14 +81,14 @@ function apriSottocategoria(evt, IDsottocategoria) {
     Array.from(sottocategoriaPannelli).forEach(pannello => {
         pannello.classList.remove("selezionato")
     })
-    // aggiunge classe "selezionato" al link
+    // aggiungo classe "selezionato" al link
     evt.currentTarget.classList.add("selezionato")
-    // aggiunge classe "selezionato" al sottocategoria-pannello
+    // aggiungo classe "selezionato" a sottocategoria-pannello
     document.getElementById(IDsottocategoria).classList.add("selezionato")
-
 }
 
 
+// ---- JSON UNIMPLEMENTED TESTS ----
 
 // read JSON via fetch
 // fetch("menu-data-example.json")
