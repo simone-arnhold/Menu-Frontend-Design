@@ -142,11 +142,12 @@ a {
   height: 36px;
 }
 
+.navbar-logo {
+  flex-shrink: 10;
+}
+
 .navbar-logo img {
-  flex: 10; /*max priority on flex*/
-  /* Modifiche da Nuove note 11.12.2023  */
-  max-width: 120px;
-  max-width: 200px;
+  max-width: 100%;
   max-height: 200px;
 }
 
@@ -165,6 +166,7 @@ a {
   transform: rotate(-135deg) translateZ(0px);
   transform-origin: center;  */
   visibility: hidden;
+  animation: fadeOut 300ms ease-out forwards;
 }
 
 .nav-categorie-btn span.menu-line,
@@ -186,12 +188,13 @@ a {
 }
 
 .navbar {
-  z-index: 101;
+  z-index: 200;
   min-height: 200px;
   background-color: var(--primary);
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
+  margin-left: auto;
   padding: 10px 35px;
   position: relative;
   justify-content: space-between;
