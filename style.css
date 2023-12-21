@@ -707,6 +707,14 @@ nav#nav-categorie a.close-menu {
   font-size: x-small;
   text-align: center;
 }
+
+/* todo check */
+.overlay-icona {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  transform: scale(0.8);
+}
 /* overlay fine */
 
 /* dev todo check dimensions*/
