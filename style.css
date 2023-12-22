@@ -31,6 +31,10 @@
     max-width: 300px;
     max-height: 300px;
   }
+
+  .navbar {
+    padding: 10px 60px !important;
+  }
 }
 
 /* css per mobile */
