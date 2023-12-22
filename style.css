@@ -145,8 +145,8 @@ a {
   white-space: inherit;
   color: var(--quaternary);
   visibility: hidden;
-  width: 46px;
-  height: 36px;
+  width: 68px;
+  height: 68px;
 }
 
 /* .navbar-logo {
@@ -174,14 +174,19 @@ a {
 }
 
 .nav-categorie-bars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 1000;
-  padding: 16px;
+  /* padding: 22px; */
   cursor: pointer;
   color: var(--secondary);
   /* opacity: 0;
   transition: opacity 300ms ease-out; */
   /* transform: scale(1.2); */
   font-size: 1.2em;
+  width: 68px;
+  height: 68px;
 }
 
 .nav-categorie-btn.plus,
@@ -226,7 +231,7 @@ a {
   flex-wrap: nowrap;
   align-items: center;
   margin-left: auto;
-  padding: 10px 35px;
+  /* padding: 10px 35px; */
   position: relative;
   justify-content: space-between;
   box-shadow: 2px 2px 12px 6px rgba(0, 0, 0, 0.1);
