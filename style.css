@@ -27,6 +27,10 @@
     padding-top: 0px !important;
   }
 
+  #nav-categorie .nav-categorie-body li {
+    font-size: 1.4rem !important;
+  }
+
   .ristorante-logo {
     max-width: 160px;
     /* max-height: 160px; */
@@ -348,7 +352,7 @@ nav#nav-categorie a.close-menu {
 }
 #nav-categorie .nav-categorie-body li {
   list-style: none;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 400;
   text-align: center;
   padding-top: 15px;
@@ -806,7 +810,7 @@ button.accordion {
 button.accordion.active
 /* button.accordion:hover */ {
   /* background-color: var(--tertiary); */
-  color: var(--quinary);
+  /* color: var(--quinary); */
   font-weight: 700;
 }
 
