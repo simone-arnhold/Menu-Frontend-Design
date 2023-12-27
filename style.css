@@ -334,7 +334,7 @@ nav#nav-categorie a.close-menu {
 
 #nav-categorie .nav-categorie-body {
   padding-top: 80px;
-  padding-bottom: 40px;
+  padding-bottom: 80px;
   /* flex-basis: 100%; */
   width: 100%;
   /* max-width: 100%; */
@@ -710,7 +710,7 @@ nav#nav-categorie a.close-menu {
 .overlay-contenuto {
   position: relative;
   transform: translate(0, -50px);
-  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
   z-index: 1005;
 }
 
