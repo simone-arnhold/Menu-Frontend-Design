@@ -92,6 +92,9 @@ body {
   background-image: linear-gradient(to top, #dad4fc 0%, #f3e7e9 100%);
   width: 100% !important;
   overflow-x: hidden;
+
+  /* calcola dimensione scrollbar in variabile */
+  --scrollbar-width: calc(100vw - 100%);
 }
 
 /* dark mode inizio */
@@ -133,10 +136,10 @@ a {
   color: var(--secondary);
 }
 
-.no-overflow {
+/* .no-overflow {
   overflow-x: hidden !important;
   overflow-y: hidden !important;
-}
+} */
 
 .navbar-brand {
   flex: 0;
@@ -279,6 +282,7 @@ nav#nav-categorie.open > *:nth-child(3) {
 }
 
 nav#nav-categorie.open {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -330,8 +334,8 @@ nav#nav-categorie a.close-menu {
 
 #nav-categorie .nav-categorie-body {
   padding-top: 80px;
-  padding-bottom: 80px;
-  flex-basis: 100%;
+  padding-bottom: 40px;
+  /* flex-basis: 100%; */
   width: 100%;
   /* max-width: 100%; */
   max-height: 100%;
