@@ -52,7 +52,7 @@ function apriCategoria(evt, IDcategoria) {
 
     // trova nome del file html della categoria da importare
     nomeHTML = "categorie/" + IDcategoria + ".html"
-    console.log(nomeHTML)
+    // console.log(nomeHTML)
 
     // inserisci dati di categorie e sottocategorie
     const xhr = new XMLHttpRequest()
@@ -74,9 +74,9 @@ function apriCategoria(evt, IDcategoria) {
             const endContenuto = content.length
             const contenuto = content.substring(startContenuto, endContenuto)
             document.querySelector(".contenitore-piatti").innerHTML = contenuto
-            console.log(contenuto)
-            console.log(startContenuto)
-            console.log(endContenuto)
+            // console.log(contenuto)
+            // console.log(startContenuto)
+            // console.log(endContenuto)
         }
     }
     xhr.send()
