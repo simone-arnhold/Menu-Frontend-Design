@@ -109,9 +109,7 @@ body.dark-mode {
 
 /* dark/light mode button */
 .mode-toggle-btn {
-  /* Modifiche da Nuove note 11.12.2023  */
   display: none;
-
   position: absolute;
   bottom: 10px;
   left: 10px;
@@ -506,6 +504,7 @@ nav#nav-categorie a.close-menu {
   right: 0%;
   transition: all 0.5s ease;
   min-height: 100%;
+  overflow-x: hidden;
 }
 .contenitore-sito .overlay {
   position: fixed;
