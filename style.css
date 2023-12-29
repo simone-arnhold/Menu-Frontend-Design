@@ -152,6 +152,7 @@ a {
 
 .navbar-logo img {
   max-width: 110px;
+  padding-top: 16px;
   /* max-height: 160px; */
 }
 
@@ -834,9 +835,13 @@ div.panel h4 {
   color: var(--secondary);
 }
 
+div.panel h4:not(:first-of-type) {
+  margin-top: 16px;
+}
+
 div.panel p:nth-of-type(n + 1) {
   /* solo la descrizione del vino, messa più vicina */
-  margin: 0 0 8px 0 !important;
+  margin: 0 0 8px 0;
 }
 
 div.panel p {
