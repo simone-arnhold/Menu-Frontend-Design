@@ -56,9 +56,10 @@ function apriCategoria(evt, IDcategoria) {
 
     // inserisci dati di categorie e sottocategorie
     const xhr = new XMLHttpRequest()
-    xhr.open('GET', nomeHTML, false)
+    xhr.open('GET', nomeHTML, true)
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
+            // richiesta completata
             const content = xhr.responseText
 
             // aggiungo le nuove pills di navigazione delle sottocategorie
@@ -74,22 +75,21 @@ function apriCategoria(evt, IDcategoria) {
             const endContenuto = content.length
             const contenuto = content.substring(startContenuto, endContenuto)
             document.querySelector(".contenitore-piatti").innerHTML = contenuto
-            // console.log(contenuto)
-            // console.log(startContenuto)
-            // console.log(endContenuto)
+            // attiva bottoni degli allergeni
+            attivaAllergeni()
+            // attiva overlay zoom delle immagini
+            abilitaZoomImmagini()
+            // accordion vini ricarica
+            accordionVini()
+            // seleziona di default prima opzione
+
+            // chiudi menu
+            toggleMenu()
+        } else if (xhr.status === 404) {
+            console.log('404 Not Found: Non è presente una pagina html della categoria selezionata.',)
         }
     }
     xhr.send()
-
-    // attiva bottoni degli allergeni TODO non funziona come inteso, probabilmente dipende da scope delle variabili
-    attivaAllergeni()
-    // accordion vini ricarica
-    accordionVini()
-
-    // seleziona di default prima opzione
-
-    // chiudi menu
-    toggleMenu()
 }
 
 function apriSottocategoria(evt, IDsottocategoria) {
@@ -120,9 +120,6 @@ function apriSottocategoria(evt, IDsottocategoria) {
 //         navJustified.scrollLeft -= 100 //scroll left
 //     }
 // })
-
-
-
 
 // open allergeni menu
 // TODO leggi lista allergeni da elemento es.allergeni_items["i_000001"] = { "allergeni": { "0": 32, "1": 33, "2": 35 } }
@@ -155,12 +152,9 @@ overlayAllergeni.addEventListener("click", (event) => {
 
 // accordion vini ---
 function accordionVini() {
-    var acc = document.getElementsByClassName("accordion");
-
+    acc = document.getElementsByClassName("accordion");
     Array.from(acc).forEach(function (accordion) {
-
         accordion.addEventListener("click", function () {
-
             this.classList.toggle("active")
             var panel = this.nextElementSibling
             if (panel.style.maxHeight) {
@@ -171,6 +165,26 @@ function accordionVini() {
         })
     })
 }
+
+// logica zoom immagine piatto quando cliccata
+function abilitaZoomImmagini() {
+    let immaginiPiatti = document.querySelectorAll(".contenuto-immagine")
+    const overlayImmagineWrapper = document.querySelector(".overlay-immagine")
+    const overlayImmagineTarget = document.querySelector(".overlay-immagine-zoom")
+
+    immaginiPiatti.forEach(immagine => {
+        immagine.addEventListener("click", function (event) {
+            zoomImageURL = window.getComputedStyle(event.target, null).getPropertyValue("background-image")
+            overlayImmagineTarget.style.backgroundImage = zoomImageURL
+            overlayImmagineWrapper.classList.toggle("show")
+        })
+    })
+    // disabilita l'overlay quando premuto in qualunque posto
+    overlayImmagineWrapper.addEventListener("click", () => {
+        overlayImmagineWrapper.classList.remove("show")
+    })
+}
+
 
 
 // ---- JSON UNIMPLEMENTED TESTS ----

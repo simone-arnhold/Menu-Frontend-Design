@@ -20,8 +20,8 @@
 
 <body>
     <div class="contenitore-sito">
-        <div class="overlay"></div>
         <!-- #nav-categorie si riferisce al menù a tendina + -->
+        <!-- <nav id="nav-categorie"> -->
         <nav id="nav-categorie" class="open">
             <div class="nav-categorie-header open">
                 <a class="navbar-logo fadein-logo fadein" href="#">
@@ -33,9 +33,9 @@
                     <ul id="nav-categorie-ul">
                         <li><a href="javascript:void(0)" onclick="apriCategoria(event, 'Menu')">Menu</a></li>
                         <li><a href="javascript:void(0)" onclick="apriCategoria(event, 'Dolci')">Dolci</a></li>
-                        <li><a href="javascript:void(0)" onclick="apriCategoria(event, 'Bevande')">Bevande</a></li>
                         <li><a href="javascript:void(0)" onclick="apriCategoria(event, 'Lista Vini')">Lista Vini</a>
                         </li>
+                        <li><a href="javascript:void(0)" onclick="apriCategoria(event, 'Bevande')">Bevande</a></li>
                         <li><a href="javascript:void(0)" onclick="apriCategoria(event, 'Business Lunch')">Business
                                 Lunch</a></li>
                     </ul>
@@ -272,8 +272,15 @@
         </div>
     </div>
 
+
+    <!-- overlay per lo zoom quando immagine cliccata -->
+    <div class="overlay overlay-immagine">
+        <div class="overlay-immagine-wrapper">
+            <div class="overlay-immagine-zoom"></div>
+        </div>
+    </div>
     <!-- overlay allergeni -->
-    <div class="overlay-allergeni">
+    <div class="overlay overlay-allergeni">
         <div class="overlay-contenuto">
             <div class="overlay-header">
                 <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
