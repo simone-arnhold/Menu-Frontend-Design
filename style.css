@@ -151,7 +151,7 @@ a {
 }
 
 .navbar-logo img {
-  max-width: 120px;
+  max-width: 110px;
   /* max-height: 160px; */
 }
 
@@ -212,7 +212,7 @@ a {
 
 .navbar {
   /* z-index: 200; */
-  min-height: 160px;
+  min-height: 120px;
   background-color: var(--primary);
   display: flex;
   flex-wrap: nowrap;
@@ -821,6 +821,10 @@ div.vini h2 {
   /* font-size: inherit; */
   color: var(--tertiary);
   margin: 16px 0 0 0;
+}
+
+div.panel h3:not(:first-child) {
+  margin-top: 24px;
 }
 
 div.panel h4 {
