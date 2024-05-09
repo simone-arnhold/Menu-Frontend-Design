@@ -185,6 +185,16 @@ function abilitaZoomImmagini() {
     })
 }
 
+// dropdown linguaggi mobile open/close
+const dropbtn = document.querySelector(".dropbtn")
+const dropdownContenuto = document.querySelector(".dropdown-contenuto")
+
+dropbtn.addEventListener("click", () => {
+    dropdownContenuto.classList.toggle("open")
+})
+
+
+
 
 
 // ---- JSON UNIMPLEMENTED TESTS ----
