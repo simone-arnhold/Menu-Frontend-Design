@@ -62,7 +62,7 @@
   --tertiary: #cdcdcd;
   --quaternary: #202020;
   --quinary: #253843;
-  --senary: #00eeff;
+  --senary: #cdcdc9;
   --border1: 1px solid var(--tertiary);
   --gradientPink: linear-gradient(to top, #dad4fc 0%, #f3e7e9 100%);
   --left-right-standard-padding: 20px;
@@ -103,7 +103,8 @@ body.dark-mode {
   --secondary: #f7f7f7;
   --tertiary: #9e9e9e;
   --quaternary: #fdfdfd;
-  --quinary: #3c4449;
+  --quinary: #cdcdc9;
+  --senary: #3c4449;
 }
 /* dark mode fine */
 
@@ -441,7 +442,7 @@ nav#nav-categorie a.close-menu {
 
 /* Change color of dropdown links on hover */
 .dropdown-contenuto a:hover {
-  background-color: var(--quinary);
+  background-color: var(--senary);
 }
 
 /* Show the dropdown menu on hover */
