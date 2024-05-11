@@ -268,10 +268,10 @@ nav#nav-categorie.open > *:nth-child(3) {
 }
 
 nav#nav-categorie.open {
-  width: 100%;
+  width: 101%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   z-index: 100;
   opacity: 1;
   transition: all 0.3s ease;
@@ -289,10 +289,11 @@ nav#nav-categorie a.close-menu {
 
 #nav-categorie .nav-categorie-header {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
-  width: 100%;
-  min-height: 180px;
+  /* flex-direction: column; */
+  /* width: 100%; */
+  /* min-height: 180px; */
   /* padding-top: 20px; */
 }
 
@@ -320,7 +321,7 @@ nav#nav-categorie a.close-menu {
 } */
 
 #nav-categorie .nav-categorie-body {
-  padding-top: 80px;
+  padding-top: 16px;
   padding-bottom: 80px;
   /* flex-basis: 100%; */
   width: 100%;
@@ -888,7 +889,7 @@ div.vini h2 {
   font-size: 1.1em;
   /* font-size: inherit; */
   color: var(--tertiary);
-  margin: 16px 0 0 0;
+  margin: 16px 0 4px 0;
 }
 
 div.panel h3:not(:first-child) {
