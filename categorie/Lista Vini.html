@@ -1,10 +1,19 @@
-<div class="sottocategoria-pannello vini selezionato" id="Vini Bianchi" aria-labelledby="nav-sottocategoria">
+<nav class="nav nav-pills nav-justified tabbable" id="tab-personalizzato" role="tablist">
+    <div class="nav-sottocategoria" onclick="apriSottocategoria(event, 'Rossi')">Rossi</div>
+    <div class="nav-sottocategoria selezionato" onclick="apriSottocategoria(event, 'Bianchi')">Bianchi
+    </div>
+    <div class="nav-sottocategoria" onclick="apriSottocategoria(event, 'Rosati')">Rosati
+    </div>
+    <div class="nav-sottocategoria" onclick="apriSottocategoria(event, 'Bollicine')">Bollicine
+    </div>
+</nav>
 
+<div class="sottocategoria-pannello vini selezionato" id="Bianchi" aria-labelledby="nav-sottocategoria">
     <h2>Regioni</h2>
-
     <button class="accordion regioni">Valle d'Aosta
         <!-- <i class="fa-solid fa-angle-up"></i> -->
     </button>
+
     <div class="panel">
         <h3 class="nome-produttore">Cà del Bosco</h3>
 
@@ -25,8 +34,8 @@
         </p>
     </div>
     <button class="accordion regioni">Lombardia</button>
-    <div class="panel">
 
+    <div class="panel">
         <h3 class="nome-produttore">Cà del Bosco</h3>
 
         <h4 class="nome-vino">Chardonnay 2017</h4>
@@ -39,9 +48,7 @@
         <p class="prezzo-piatto">
             <span><span class="valuta">€</span> 58 </span>
         </p>
-
         <h3 class="nome-produttore">Corte dei Laghi</h3>
-
         <h4 class="nome-vino">Chardonnay 2017</h4>
         <p class="descrizione-vino">Chardonnay 100% (9 mesi barriques)</p>
         <p class="prezzo-piatto">
@@ -53,4 +60,5 @@
             <span><span class="valuta">€</span> 58 </span>
         </p>
     </div>
+
 </div>

@@ -1,0 +1,39 @@
+{
+    "piatti": [
+        {
+            "nome": "Cheeseburger classico",
+            "allergeni": ["latticini, glutine"],
+            "prezzo": 12.90,
+            "categoria-id": "Menu principale",
+            "sottocategoria-id": "Hamburgers"
+        },
+        {
+            "nome": "Insalata vegana",
+            "allergeni": ["glutine, soia"],
+            "prezzo": 9.90,
+            "categoria-id": "Menu principale",
+            "sottocategoria-id": "Insalate"
+        },
+        {
+            "nome": "Margherita",
+            "allergeni": ["latticini, glutine"],
+            "prezzo": 5.90,
+            "categoria-id": "Menu principale",
+            "sottocategoria-id": "Pizze"
+        },
+        {
+            "nome": "Prosciutto e funghi",
+            "allergeni": ["latticini, glutine, carne"],
+            "prezzo": 7.90,
+            "categoria-id": "Menu principale",
+            "sottocategoria-id": "Pizze"
+        },
+        {
+            "nome": "Tiramisù",
+            "allergeni": ["latticini, glutine"],
+            "prezzo": 6.00,
+            "categoria-id": "Desserts",
+            "sottocategoria-id": "Semifreddi"
+        }
+    ]
+}

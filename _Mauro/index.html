@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- nota: TODO favicon placeholder-->
+    <link rel="icon" type="image/png" href="resources/images/shape_circle_icon.png" />
+    <link rel="stylesheet" href="style.css">
+    <!-- font awesome link cdn js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </link>
+
+    <!-- nota: TODO html page title -->
+    <title>Menu</title>
+</head>
+
+<body class="dark-mode">
+    <div class="contenitore-sito">
+        <!-- #nav-categorie si riferisce al menù a tendina + -->
+        <!-- <nav id="nav-categorie"> -->
+        <nav id="nav-categorie" class="open">
+            <div class="nav-categorie-header open">
+                <a class="navbar-logo fadein-logo fadein" href="#">
+                    <img class="ristorante-logo" src="resources/images/ristorante-logo.png" alt="">
+                </a>
+            </div>
+            <div class="nav-categorie-body">
+                <div class="inner">
+                    <ul id="nav-categorie-ul">
+                        <li><a href="javascript:void(0)" onclick="apriCategoria(event, 'Menu')">Menu</a></li>
+                        <li><a href="javascript:void(0)" onclick="apriCategoria(event, 'Dolci')">Dolci</a></li>
+                        <li><a href="javascript:void(0)" onclick="apriCategoria(event, 'Lista Vini')">Lista Vini</a>
+                        </li>
+                        <li><a href="javascript:void(0)" onclick="apriCategoria(event, 'Bevande')">Bevande</a></li>
+                        <li><a href="javascript:void(0)" onclick="apriCategoria(event, 'Business Lunch')">Business
+                                Lunch</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- dropdown menu-->
+            <div class="nav-categorie-footer">
+                <div class="dropdown">
+                    <button class="dropbtn">Lingua <i class="fa fa-angle-up" aria-hidden="true"></i></button>
+                    <div class="dropdown-contenuto">
+                        <a href="#">🇮🇹 Italiano</a></li>
+                        <a href="../en/index.html">🇬🇧 English</a></li>
+                        <a href="../fr/index.html">🇫🇷 Français</a></li>
+                        <a href="../de/index.html">🇩🇪 Deutsch</a></li>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="nav-categorie-footer">
+                <ul class="linguaggi">
+                    <li class="lang-btn corrente"><a href="#">IT</a></li>
+                    <li class="lang-btn"><a href="../en/index.html">EN</a></li>
+                </ul>
+            </div> -->
+            <!-- <div class="nav-categorie-footer">
+                <ul class="linguaggi">
+                    <li class="lang-btn corrente"><a href="#">IT</a></li>
+                    <li class="lang-btn"><a href="../en/index.html">EN</a></li>
+                </ul>
+            </div> -->
+
+        </nav>
+
+        <div class="contenitore-main">
+            <div class="navbar">
+                <a class="navbar-brand" href="#">Menu</a>
+                <a class="navbar-logo" href="#">
+                    <img class="ristorante-logo" src="resources/images/ristorante-logo.png" alt="">
+                </a>
+                <div class="nav-categorie-btn nav-categorie-bars open">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+                <!-- + menu button -->
+                <!-- <div class="nav-categorie-btn plus open">
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                </div> -->
+
+                <!-- display:none disabled dark mode button in style -->
+                <button class="mode-toggle-btn dark-light" onclick="toggleMode()">
+                </button>
+
+            </div>
+
+            <section class="nav-sottocategorie">
+                <div class="contenitore-sottocategorie">
+                    <nav class="nav nav-pills nav-justified tabbable" id="tab-personalizzato" role="tablist">
+                        <div class="nav-sottocategoria" onclick="apriSottocategoria(event, 'Antipasti')">
+                            Antipasti</div>
+                        <div class="nav-sottocategoria" onclick="apriSottocategoria(event, 'Sushi')">Sushi
+                        </div>
+                        <div class="nav-sottocategoria" onclick="apriSottocategoria(event, 'Piatti Caldi')">Piatti Caldi
+                        </div>
+                        <div class="nav-sottocategoria" onclick="apriSottocategoria(event, 'Tempura')">Alternativa alla carne</div>
+                        <div class="nav-sottocategoria" onclick="apriSottocategoria(event, 'Uramaki')">Contorni</div>
+                        <!-- <div class="nav-sottocategoria selezionato"
+                            onclick="apriSottocategoria(event, 'Vini Bianchi DEV')">
+                            Vini Bianchi</div> -->
+                    </nav>
+                </div>
+            </section>
+
+            <section id="contenuto-personalizzato">
+
+                <div class="contenitore-piatti">
+                    <!-- sottocategoria-pannello  -->
+                    <div class="sottocategoria-pannello" id="Antipasti" aria-labelledby="nav-sottocategoria">
+                        <div class="piatto" id="el_000000">
+                            <div class="riga contenitore-immagine">
+                                <div class="contenuto-immagine"
+                                    style="background-image:url(resources/images/piatti/placeholder.jpeg)">
+                                </div>
+                            </div>
+                            <div class="riga contenitore-testo">
+                                <h3 class="titolo-piatto">titolo piatto</h3>
+                                <div class="allergeni-info">
+                                    <h3><a data-toggle="overlay-allergeni-modale" data-target="allergeni-info"
+                                            data-json="000001"><i class="fas fa-info-circle" aria-hidden="true"></i></a>
+                                    </h3>
+                                </div>
+                                <p class="descrizione-piatto">
+                                    <span>descrizione del piatto.</span>
+                                </p>
+                                <p class="prezzo-piatto">
+                                    <span><span class="valuta">€</span> -- </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sottocategoria-pannello" id="Sushi" aria-labelledby="nav-sottocategoria">
+                        <!-- esempio di singolo elemento del menù .piatto -->
+                        <div class="piatto" id="el_000001">
+                            <div class="riga contenitore-immagine">
+                                <div class="contenuto-immagine"
+                                    style="background-image:url(resources/images/piatti/5.jpeg)">
+                                </div>
+                            </div>
+                            <div class="riga contenitore-testo">
+                                <script>
+                                    // gli allergeni con item={value} otterranno la classe "on"
+                                    // allergeni_items["i_000001"] = { "allergeni": { "0": 32, "1": 33, "2": 35 } };
+                                </script>
+                                <h3 class="titolo-piatto">Wagyu Usuzukuri A5</h3>
+                                <div class="allergeni-info">
+                                    <h3><a data-toggle="overlay-allergeni-modale" data-target="allergeni-info"
+                                            data-json="000001"><i class="fas fa-info-circle" aria-hidden="true"></i></a>
+                                    </h3>
+                                </div>
+                                <p class="descrizione-piatto">
+                                    <span>Carpaccio di manzo nobile giapponese, leggermente scottato servito con
+                                        battuta di pomodoro fresco e salsa nishiki</span>
+                                </p>
+                                <p class="prezzo-piatto">
+                                    <span><span class="valuta">€</span> 26 </span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- esempio di singolo elemento del menù .piatto -->
+                        <div class="piatto" id="el_000001">
+                            <div class="riga contenitore-immagine">
+                                <div class="contenuto-immagine"
+                                    style="background-image:url(resources/images/piatti/4.jpeg)">
+                                </div>
+                            </div>
+                            <div class="riga contenitore-testo">
+                                <script>
+                                    // gli allergeni con item={value} otterranno la classe "on"
+                                    // allergeni_items["i_000001"] = { "allergeni": { "0": 32, "1": 33, "2": 35 } };
+                                </script>
+                                <h3 class="titolo-piatto">Wagyu Usuzukuri A5</h3>
+                                <div class="allergeni-info">
+                                    <h3><a data-toggle="overlay-allergeni-modale" data-target="allergeni-info"
+                                            data-json="000001"><i class="fas fa-info-circle" aria-hidden="true"></i></a>
+                                    </h3>
+                                </div>
+                                <p class="descrizione-piatto">
+                                    <span>Carpaccio di manzo nobile giapponese, leggermente scottato servito con
+                                        battuta di pomodoro fresco e salsa nishiki</span>
+                                </p>
+                                <p class="prezzo-piatto">
+                                    <span><span class="valuta">€</span> 26 </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="piatto" id="el_000001">
+                            <div class="riga contenitore-immagine">
+                                <div class="contenuto-immagine"
+                                    style="background-image:url(resources/images/piatti/3.jpeg)">
+                                </div>
+                            </div>
+                            <div class="riga contenitore-testo">
+                                <h3 class="titolo-piatto">Wagyu Usuzukuri A5</h3>
+                                <div class="allergeni-info">
+                                    <h3><a data-toggle="overlay-allergeni-modale" data-target="allergeni-info"
+                                            data-json="000001"><i class="fas fa-info-circle" aria-hidden="true"></i></a>
+                                    </h3>
+                                </div>
+                                <p class="descrizione-piatto">
+                                    <span>Carpaccio di manzo nobile giapponese, leggermente scottato servito con
+                                        battuta di pomodoro fresco e salsa nishiki</span>
+                                </p>
+                                <p class="prezzo-piatto">
+                                    <span><span class="valuta">€</span> 26 </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sottocategoria-pannello" id="Piatti Caldi" aria-labelledby="nav-sottocategoria">
+                        <div class="piatto" id="el_000000">
+                            <div class="riga contenitore-immagine">
+                                <div class="contenuto-immagine"
+                                    style="background-image:url(resources/images/piatti/placeholder.jpeg)">
+                                </div>
+                            </div>
+                            <div class="riga contenitore-testo">
+                                <h3 class="titolo-piatto">titolo piatto</h3>
+                                <div class="allergeni-info">
+                                    <h3><a data-toggle="overlay-allergeni-modale" data-target="allergeni-info"
+                                            data-json="000001"><i class="fas fa-info-circle" aria-hidden="true"></i></a>
+                                    </h3>
+                                </div>
+                                <p class="descrizione-piatto">
+                                    <span>descrizione del piatto.</span>
+                                </p>
+                                <p class="prezzo-piatto">
+                                    <span><span class="valuta">€</span> -- </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sottocategoria-pannello" id="Tempura" aria-labelledby="nav-sottocategoria">
+                        <div class="piatto" id="el_000000">
+                            <div class="riga contenitore-immagine">
+                                <div class="contenuto-immagine"
+                                    style="background-image:url(resources/images/piatti/placeholder.jpeg)">
+                                </div>
+                            </div>
+                            <div class="riga contenitore-testo">
+                                <h3 class="titolo-piatto">titolo piatto</h3>
+                                <div class="allergeni-info">
+                                    <h3><a data-toggle="overlay-allergeni-modale" data-target="allergeni-info"
+                                            data-json="000001"><i class="fas fa-info-circle" aria-hidden="true"></i></a>
+                                    </h3>
+                                </div>
+                                <p class="descrizione-piatto">
+                                    <span>descrizione del piatto.</span>
+                                </p>
+                                <p class="prezzo-piatto">
+                                    <span><span class="valuta">€</span> -- </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sottocategoria-pannello" id="Uramaki" aria-labelledby="nav-sottocategoria">
+                        <div class="piatto" id="el_000000">
+                            <div class="riga contenitore-immagine">
+                                <div class="contenuto-immagine"
+                                    style="background-image:url(resources/images/piatti/placeholder.jpeg)">
+                                </div>
+                            </div>
+                            <div class="riga contenitore-testo">
+                                <h3 class="titolo-piatto">titolo piatto</h3>
+                                <div class="allergeni-info">
+                                    <h3><a data-toggle="overlay-allergeni-modale" data-target="allergeni-info"
+                                            data-json="000001"><i class="fas fa-info-circle" aria-hidden="true"></i></a>
+                                    </h3>
+                                </div>
+                                <p class="descrizione-piatto">
+                                    <span>descrizione del piatto.</span>
+                                </p>
+                                <p class="prezzo-piatto">
+                                    <span><span class="valuta">€</span> -- </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+    <!-- overlay per lo zoom quando immagine cliccata -->
+    <div class="overlay overlay-immagine">
+        <div class="overlay-immagine-wrapper">
+            <div class="overlay-immagine-zoom"></div>
+        </div>
+    </div>
+    <!-- overlay allergeni -->
+    <div class="overlay overlay-allergeni">
+        <div class="overlay-contenuto">
+            <div class="overlay-header">
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span></button> -->
+                <a href="#" class="overlay-close-btn">
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                    <!-- hamburger alternative -->
+                </a>
+            </div>
+
+            <div class="overlay-body">
+                <h2>Allergeni</h2>
+                <ul class="overlay-icone">
+                    <li class="overlay-icona" item="30">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/30_Cereali-48px.png" alt="">
+                        <p class="titolo">Cereali</p>
+                    </li>
+                    <li class="overlay-icona" item="31">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/31_Crostacei-48px.png" alt="">
+                        <p class="titolo">Crostacei</p>
+                    </li>
+                    <li class="overlay-icona" item="32">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/32_Uova-48px.png" alt="">
+                        <p class="titolo">Uova</p>
+                    </li>
+                    <li class="overlay-icona" item="33">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/33_Pesce-48px.png" alt="">
+                        <p class="titolo">Pesce</p>
+                    </li>
+                    <li class="overlay-icona" item="34">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/34_Arachidi-48px.png" alt="">
+                        <p class="titolo">Arachidi</p>
+                    </li>
+                    <li class="overlay-icona" item="35">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/35_Soia-48px.png" alt="">
+                        <p class="titolo">Soia</p>
+                    </li>
+                    <li class="overlay-icona" item="36">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/36_Latte-48px.png" alt="">
+                        <p class="titolo">Latte</p>
+                    </li>
+                    <li class="overlay-icona" item="37">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/37_Frutta_a_guscio-48px.png" alt="">
+                        <p class="titolo">Frutta a guscio</p>
+                    </li>
+                    <li class="overlay-icona" item="38">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/38_Sedano-48px.png" alt="">
+                        <p class="titolo">Sedano</p>
+                    </li>
+                    <li class="overlay-icona" item="39">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/39_Senape-48px.png" alt="">
+                        <p class="titolo">Senape</p>
+                    </li>
+                    <li class="overlay-icona" item="40">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/40_Semi_di_sesamo-48px.png" alt="">
+                        <p class="titolo">Semi di sesamo</p>
+                    </li>
+                    <li class="overlay-icona" item="41">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/41_Anidride_solforsa-48px.png"
+                            alt="">
+                        <p class="titolo">Anidride solforosa</p>
+                    </li>
+                    <li class="overlay-icona" item="42">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/42_Lupini-48px.png" alt="">
+                        <p class="titolo">Lupini</p>
+                    </li>
+                    <li class="overlay-icona" item="43">
+                        <img src="resources/images/ICONE_OSTE_PNG_48w/48w_allergeni/43_Molluschi-48px.png" alt="">
+                        <p class="titolo">Molluschi</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </section>
+
+    </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
